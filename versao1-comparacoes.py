@@ -57,18 +57,21 @@ matriz = criaMatriz(5)
 
 # calculo da matriz
 i = 0
-x = 0
 j = 0
+x = 0
 
-for z in range(16):
+for z in range(25):
     if i != j:
-        matriz[i][j] = notas[x]
-        x += 1
+        if j < i:
+            matriz[i][j] = 1/notas[i+j-1]
+        else:
+            matriz[i][j] = notas[i+j-1]
     if j < 4:
         j += 1
     else:
         i += 1
-        j = i
+        j = 0
+print (matriz)
 
 i = 0
 x = 0
