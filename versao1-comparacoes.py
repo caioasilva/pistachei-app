@@ -11,6 +11,11 @@ def criaMatriz(num):
 
 
 def transformaNota(nota):
+    """
+
+    :param nota: nota bruta da entrada
+    :return: nota para fazer a conta das preferências
+    """
     if nota == 1:
         nota = 5
     elif nota == 2:
@@ -28,18 +33,18 @@ def transformaNota(nota):
 notas = np.ones(shape=10)
 
 # leitura de notas
-print("Mais importante \t\t\t Neutro \t\t\t Mais importante")
-print("1\t\t\t\t2\t\t\t\t3\t\t\t\t4\t\t\t\t5 ")
-notas[0] = int(input("Camera\t\t\tx\t\t\tDesempenho\n"))
-notas[1] = int(input("Camera\t\t\tx\t\t\tTela\n"))
-notas[2] = int(input("Camera\t\t\tx\t\t\tBateria\n"))
-notas[3] = int(input("Camera\t\t\tx\t\t\tArmazenamento\n"))
-notas[4] = int(input("Desempenho\t\t\tx\t\t\tTela\n"))
-notas[5] = int(input("Desempenho\t\t\tx\t\t\tBateria\n"))
-notas[6] = int(input("Desempenho\t\t\tx\t\t\tArmazenamento\n"))
-notas[7] = int(input("Tela\t\t\tx\t\t\tBateria\n"))
-notas[8] = int(input("Tela\t\t\tx\t\t\tArmazenamento\n"))
-notas[9] = int(input("Bateria\t\t\tx\t\t\tArmazenamento\n"))
+print("Mais importante\t\tNeutro\t\t Mais importante")
+print("1\t\t\t2\t\t\t3\t\t\t4\t\t\t5 ")
+notas[0] = int(input("Camera\t\t\t\tx\t\t\t\tDesempenho\n"))
+notas[1] = int(input("Camera\t\t\t\tx\t\t\t\tTela\n"))
+notas[2] = int(input("Camera\t\t\t\tx\t\t\t\tBateria\n"))
+notas[3] = int(input("Camera\t\t\t\tx\t\t\t\tArmazenamento\n"))
+notas[4] = int(input("Desempenho\t\t\t\tx\t\t\t\tTela\n"))
+notas[5] = int(input("Desempenho\t\t\t\tx\t\t\t\tBateria\n"))
+notas[6] = int(input("Desempenho\t\t\t\tx\t\t\t\tArmazenamento\n"))
+notas[7] = int(input("Tela\t\t\t\tx\t\t\t\tBateria\n"))
+notas[8] = int(input("Tela\t\t\t\tx\t\t\t\tArmazenamento\n"))
+notas[9] = int(input("Bateria\t\t\t\tx\t\t\t\tArmazenamento\n"))
 
 
 for x in range(10):
@@ -104,8 +109,8 @@ notaTela = notaFinal[2]
 notaBateria = notaFinal[3]
 notaArmazenamento = notaFinal[4]
 
-print("\n\nNota camera" + str(notaCamera))
-print("Nota Desempenho" + str(notaDesempenho))
-print("Nota Tela" + str(notaTela))
-print("Nota Bateria" + str(notaBateria))
-print("Nota Armazenamento" + str(notaArmazenamento))
+print("\n\nNota camera " + str(notaCamera))
+print("Nota Desempenho " + str(notaDesempenho))
+print("Nota Tela " + str(notaTela))
+print("Nota Bateria " + str(notaBateria))
+print("Nota Armazenamento " + str(notaArmazenamento))
