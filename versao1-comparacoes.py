@@ -1,4 +1,9 @@
 import numpy as np
+import pymysql
+
+conn = pymysql.connect(host='localhost', port=3306, user='root', passwd='', db='smartdata', charset='utf8mb4')
+
+cur = conn.cursor()
 
 
 def criaMatriz(num):
@@ -31,6 +36,8 @@ def transformaNota(nota):
 
 # criação vetor de notas
 notas = np.ones(shape=10)
+
+precoMax = int(input("Qual o preço máximo? "))
 
 # leitura de notas
 print("Mais importante\t\tNeutro\t\t Mais importante")
@@ -117,3 +124,22 @@ print("Nota Desempenho " + str(notaDesempenho))
 print("Nota Tela " + str(notaTela))
 print("Nota Bateria " + str(notaBateria))
 print("Nota Armazenamento " + str(notaArmazenamento))
+
+query = \
+    "SELECT *,(" \
+    "`notaCamera`* "+str(notaCamera)+" + " \
+    "`notaTela` * "+str(notaTela)+" + "\
+    "`notaDesempenho` * "+str(notaDesempenho)+" +"\
+    "log2(`armazenamentoMax`) * 10 / log2(maximo.`TOParmazenamento`) * "+str(notaArmazenamento)+" + "\
+    "`bateria` * 10 / maximo.`TOPbateria` * "+str(notaBateria)+" + " \
+    "  0.6 * ("+str(precoMax)+" - `precoMin`)/"+str(precoMax)+ \
+    " + log2(`ramMax`) * 10 / log2(maximo.`TOPRAM`) * "+str(notaDesempenho)+" ) "\
+    "  as `SCORE` "\
+    "FROM `rawdata`, "\
+    " 		(SELECT MAX(`ramMax`) as `TOPRAM`, MAX(`armazenamentoMax`) as `TOParmazenamento`, MAX(`bateria`) as `TOPbateria` FROM `rawdata`) as maximo "\
+    "WHERE `precoMin` < "+str(precoMax)+" and `ano` >= 2017 "\
+    "ORDER BY `SCORE` DESC LIMIT 5"
+print(query)
+cur.execute(query)
+row = cur.fetchone()
+print(row)
