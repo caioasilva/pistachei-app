@@ -129,17 +129,19 @@ query = \
     "SELECT *,(" \
     "`notaCamera`* "+str(notaCamera)+" + " \
     "`notaTela` * "+str(notaTela)+" + "\
-    "`notaDesempenho` * "+str(notaDesempenho)+" +"\
+    "`notaDesempenho` * (0.1+"+str(notaDesempenho)+") +"\
     "log2(`armazenamentoMax`) * 10 / log2(maximo.`TOParmazenamento`) * "+str(notaArmazenamento)+" + "\
     "`bateria` * 10 / maximo.`TOPbateria` * "+str(notaBateria)+" + " \
     "  0.6 * ("+str(precoMax)+" - `precoMin`)/"+str(precoMax)+ \
     " + log2(`ramMax`) * 10 / log2(maximo.`TOPRAM`) * "+str(notaDesempenho)+" ) "\
     "  as `SCORE` "\
     "FROM `rawdata`, "\
-    " 		(SELECT MAX(`ramMax`) as `TOPRAM`, MAX(`armazenamentoMax`) as `TOParmazenamento`, MAX(`bateria`) as `TOPbateria` FROM `rawdata`) as maximo "\
-    "WHERE `precoMin` < "+str(precoMax)+" and `ano` >= 2017 "\
+    "(SELECT MAX(`ramMax`) as `TOPRAM`, MAX(`armazenamentoMax`) as `TOParmazenamento`, MAX(`bateria`) as `TOPbateria` FROM `rawdata`) as maximo "\
+    "WHERE `precoMin` < "+str(precoMax)+" and `ano` >= 2016 "\
     "ORDER BY `SCORE` DESC LIMIT 5"
 print(query)
 cur.execute(query)
 row = cur.fetchone()
 print(row)
+
+conn.close()
