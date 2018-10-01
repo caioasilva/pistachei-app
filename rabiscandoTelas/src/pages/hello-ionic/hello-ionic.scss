@@ -1,0 +1,14 @@
+page-hello-ionic {
+    .bg{
+        background: linear-gradient(to left, color($colors,primary) 80%, color($colors, light));
+    }
+
+    .center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 50%;
+        height: 100%;
+        width: 100%;
+    }
+}
