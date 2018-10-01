@@ -1,7 +1,0 @@
-{
-  "name": "rabiscandoTelas",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "ionic-angular"
-}
