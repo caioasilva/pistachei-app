@@ -1,14 +1,26 @@
 page-hello-ionic {
     .bg{
-        background: linear-gradient(to left, color($colors,primary) 80%, color($colors, light));
+        background: linear-gradient(to bottom, color($colors,primary) 70%, color($colors, light));
     }
 
-    .center {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        max-width: 50%;
+    .total {
         height: 100%;
+        width: 100%;
+    }
+
+    .center{
+        height: 70%;
+        align-items: center;
+    }
+
+
+
+    .fonte{
+        font-size: 4.5rem;
+    }
+
+
+    .cabecalho{
         width: 100%;
     }
 }

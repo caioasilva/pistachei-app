@@ -141,7 +141,7 @@ query = \
     "ORDER BY `SCORE` DESC LIMIT 5"
 print(query)
 cur.execute(query)
-row = cur.fetchone()
+row = cur.fetchall()
 print(row)
 
 conn.close()
