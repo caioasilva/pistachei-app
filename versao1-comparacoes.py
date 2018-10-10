@@ -1,5 +1,6 @@
 import numpy as np
 import pymysql
+from datetime import datetime
 
 conn = pymysql.connect(host='localhost', port=3306, user='root', passwd='', db='smartdata', charset='utf8mb4')
 
@@ -22,15 +23,15 @@ def transformaNota(nota):
     :return: nota para fazer a conta das preferências
     """
     if nota == 1:
-        nota = 5
+        nota = 9
     elif nota == 2:
-            nota = 3
+        nota = 5
     elif nota == 3:
         nota = 1
     elif nota == 4:
-        nota = (1 / 3)
-    elif nota == 5:
         nota = (1 / 5)
+    elif nota == 5:
+        nota = (1 / 9)
     return nota
 
 
@@ -63,22 +64,17 @@ matriz = criaMatriz(5)
 
 
 # calculo da matriz
-i = 0
-j = 0
-x = 0
+matriz[0][1] = notas[0]
+matriz[0][2] = notas[1]
+matriz[0][3] = notas[2]
+matriz[0][4] = notas[3]
+matriz[1][2] = notas[4]
+matriz[1][3] = notas[5]
+matriz[1][4] = notas[6]
+matriz[2][3] = notas[7]
+matriz[2][4] = notas[8]
+matriz[3][4] = notas[9]
 
-for z in range(25):
-    if i != j:
-        if j < i:
-            matriz[i][j] = 1/notas[i+j-1]
-        else:
-            matriz[i][j] = notas[i+j-1]
-    if j < 4:
-        j += 1
-    else:
-        i += 1
-        j = 0
-print (matriz)
 
 i = 0
 x = 0
@@ -86,13 +82,15 @@ j = 0
 
 for z in range(16):
     if i != j:
-        matriz[j][i] = (1 / notas[x])
+        matriz[j][i] = (1 / matriz[i][j])
         x += 1
     if j < 4:
         j += 1
     else:
         i += 1
         j = i
+
+print(matriz)
 
 
 # soma das colunas para normalização
@@ -125,23 +123,30 @@ print("Nota Tela " + str(notaTela))
 print("Nota Bateria " + str(notaBateria))
 print("Nota Armazenamento " + str(notaArmazenamento))
 
+now = datetime.now()
+
 query = \
     "SELECT *,(" \
-    "`notaCamera`* "+str(notaCamera)+" + " \
-    "`notaTela` * "+str(notaTela)+" + "\
-    "`notaDesempenho` * (0.1+"+str(notaDesempenho)+") +"\
-    "log2(`armazenamentoMax`) * 10 / log2(maximo.`TOParmazenamento`) * "+str(notaArmazenamento)+" + "\
-    "`bateria` * 10 / maximo.`TOPbateria` * "+str(notaBateria)+" + " \
-    "  0.6 * ("+str(precoMax)+" - `precoMin`)/"+str(precoMax)+ \
-    " + log2(`ramMax`) * 10 / log2(maximo.`TOPRAM`) * "+str(notaDesempenho)+" ) "\
-    "  as `SCORE` "\
+    "`notaCamera` /5* "+str(notaCamera)+" + " \
+    "`notaTela` /5 * "+str(notaTela)+" + "\
+    "`notaDesempenho` /5 * "+str(notaDesempenho)+" +"\
+    "1/(2^(log2(constantes.`TOParmazenamento`) - log2(`armazenamentoMax`))) * "+str(notaArmazenamento)+" + "\
+    "`bateria` / constantes.`TOPbateria` * "+str(notaBateria)+" + " \
+    "  ("+str(precoMax)+" - `precoMin`)/"+str(precoMax)+ \
+    " + 1/(2^(log2(constantes.`TOPRAM`) - log2(`ramMax`))) * "+str(notaDesempenho)+"  + " \
+    "1/(2^("+str(now.year)+"-`ano`)) )"\
+    "  as `SCORE`"\
     "FROM `rawdata`, "\
-    "(SELECT MAX(`ramMax`) as `TOPRAM`, MAX(`armazenamentoMax`) as `TOParmazenamento`, MAX(`bateria`) as `TOPbateria` FROM `rawdata`) as maximo "\
-    "WHERE `precoMin` < "+str(precoMax)+" and `ano` >= 2016 "\
-    "ORDER BY `SCORE` DESC LIMIT 5"
+    "(SELECT MAX(`ramMax`) as `TOPRAM`, MAX(`armazenamentoMax`) as `TOParmazenamento`, MAX(`bateria`) as `TOPbateria`, (" + str(precoMax) + " " \
+                                    " - 0.6*("+str(precoMax)+" - MIN(`precoMin`))) as `MinPreco`  FROM `rawdata` WHERE `precoMin` > 0) as constantes "\
+    "WHERE `ano` > 2016 AND `precoMin` BETWEEN `MinPreco` AND " + str(precoMax) + " " \
+    "ORDER BY `SCORE` DESC LIMIT 10"
+
 print(query)
+
 cur.execute(query)
-row = cur.fetchall()
-print(row)
+result = cur.fetchall()
+for row in result:
+  print (row)
 
 conn.close()
