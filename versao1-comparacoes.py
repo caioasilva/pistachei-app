@@ -90,7 +90,7 @@ for z in range(16):
         i += 1
         j = i
 
-print(matriz)
+#print(matriz)
 
 
 # soma das colunas para normalização
@@ -117,11 +117,11 @@ notaTela = notaFinal[2]
 notaBateria = notaFinal[3]
 notaArmazenamento = notaFinal[4]
 
-print("\n\nNota camera " + str(notaCamera))
-print("Nota Desempenho " + str(notaDesempenho))
-print("Nota Tela " + str(notaTela))
-print("Nota Bateria " + str(notaBateria))
-print("Nota Armazenamento " + str(notaArmazenamento))
+#print("\n\nNota camera " + str(notaCamera))
+#print("Nota Desempenho " + str(notaDesempenho))
+#print("Nota Tela " + str(notaTela))
+#print("Nota Bateria " + str(notaBateria))
+#print("Nota Armazenamento " + str(notaArmazenamento))
 
 now = datetime.now()
 
@@ -142,7 +142,7 @@ query = \
     "WHERE `ano` > 2016 AND `precoMin` BETWEEN `MinPreco` AND " + str(precoMax) + " " \
     "ORDER BY `SCORE` DESC LIMIT 10"
 
-print(query)
+#print(query)
 
 cur.execute(query)
 result = cur.fetchall()

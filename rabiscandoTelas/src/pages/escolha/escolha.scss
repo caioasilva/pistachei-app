@@ -1,0 +1,39 @@
+page-escolha {
+    .bg{
+        background: linear-gradient(to bottom, color($colors,primary) 70%, color($colors, light));
+    }
+
+
+    .cabecalho{
+        width: 100%;
+    }
+
+    .total {
+        height: 100%;
+        width: 60%;
+        align-content: center;
+    }
+
+    .fonte{
+        font-size: 3rem;
+        overflow: hidden; 
+        margin: auto;
+        white-space: normal;
+        animation: 
+            typing 3.5s steps(40, end),
+            blink-caret .75s step-end infinite;
+        text-overflow: ellipsis;
+        flex-wrap: wrap;
+    }
+    
+    @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+    }
+    
+    @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: color($colors, primary) }
+    }
+        
+}
