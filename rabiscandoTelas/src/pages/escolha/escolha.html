@@ -3,8 +3,8 @@
 
 
 <ion-content padding class="bg">
-  
-  
+
+
   <ion-grid class="cabecalho">
     <ion-row justify-content-end>
       <ion-col>
@@ -14,31 +14,108 @@
       <ion-col align-self-end>
         <button ion-button color="gray" outline round>O que é</button>
         <button ion-button color="gray" outline round>Sobre Nós</button>
-        <button ion-button color="gray" round>Entrar</button>      
+        <button ion-button color="gray" round>Entrar</button>
       </ion-col>
-    </ion-row>  
+    </ion-row>
   </ion-grid>
-      
 
-
-    <ion-grid class="total" > 
-      <ion-slides style="vertical-align: top">
-      <ion-slide>
-      <ion-item  class="fonte" style="background: transparent" >
-          Vamos encontrar o celular perfeito pra você! Para isso, você deve ajustar as características abaixo ao seu gosto.   
-      </ion-item>
-    </ion-slide>
-
-    <ion-slide>
-      <ion-item style="background: transparent">
-          <ion-range min="1" max="5" step="1" snaps="true" color="gray">
-            <ion-icon range-left name="camera" color="gray"></ion-icon>
-            <ion-icon range-right name="git-branch" color="gray"></ion-icon>
-          </ion-range>
-        </ion-item>    
-      </ion-slide>
-    </ion-slides>
-
+  <form>
+    <ion-grid col-12 col-sm-10 col-lg-8>
+      <ion-row>
+        <ion-item style="background: transparent" text-wrap text-center no-lines>
+            <ion-label>
+                Ajuste de acordo com sua preferência.
+            </ion-label>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-item style="background: transparent" no-lines>
+            <ion-range min="1" max="5" step="1" snaps="true" color="gray">
+              <ion-icon range-left name="camera" color="gray"></ion-icon>
+              <ion-icon range-right name="speedometer" color="gray"></ion-icon>
+            </ion-range>
+          </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-item style="background: transparent" no-lines>
+            <ion-range min="1" max="5" step="1" snaps="true" color="gray">
+              <ion-icon range-left name="camera" color="gray"></ion-icon>
+              <ion-icon range-right name="phone-portrait" color="gray"></ion-icon>
+            </ion-range>
+          </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-item style="background: transparent" no-lines>
+            <ion-range min="1" max="5" step="1" snaps="true" color="gray">
+              <ion-icon range-left name="camera" color="gray"></ion-icon>
+              <ion-icon range-right name="battery-charging" color="gray"></ion-icon>
+            </ion-range>
+          </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-item style="background: transparent" no-lines>
+            <ion-range min="1" max="5" step="1" snaps="true" color="gray">
+              <ion-icon range-left name="camera" color="gray"></ion-icon>
+              <ion-icon range-right name="archive" color="gray"></ion-icon>
+            </ion-range>
+          </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-item style="background: transparent" no-lines>
+            <ion-range min="1" max="5" step="1" snaps="true" color="gray">
+              <ion-icon range-left name="speedometer" color="gray"></ion-icon>
+              <ion-icon range-right name="phone-portrait" color="gray"></ion-icon>
+            </ion-range>
+          </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-item style="background: transparent" no-lines>
+            <ion-range min="1" max="5" step="1" snaps="true" color="gray">
+              <ion-icon range-left name="speedometer" color="gray"></ion-icon>
+              <ion-icon range-right name="battery-charging" color="gray"></ion-icon>
+            </ion-range>
+          </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-item style="background: transparent" no-lines>
+            <ion-range min="1" max="5" step="1" snaps="true" color="gray">
+              <ion-icon range-left name="speedometer" color="gray"></ion-icon>
+              <ion-icon range-right name="archive" color="gray"></ion-icon>
+            </ion-range>
+          </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-item style="background: transparent" no-lines>
+            <ion-range min="1" max="5" step="1" snaps="true" color="gray">
+              <ion-icon range-left name="phone-portrait" color="gray"></ion-icon>
+              <ion-icon range-right name="battery-charging" color="gray"></ion-icon>
+            </ion-range>
+          </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-item style="background: transparent" no-lines>
+            <ion-range min="1" max="5" step="1" snaps="true" color="gray">
+              <ion-icon range-left name="phone-portrait" color="gray"></ion-icon>
+              <ion-icon range-right name="archive" color="gray"></ion-icon>
+            </ion-range>
+          </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-item style="background: transparent" no-lines>
+            <ion-range min="1" max="5" step="1" snaps="true" color="gray">
+              <ion-icon range-left name="battery-charging" color="gray"></ion-icon>
+              <ion-icon range-right name="archive" color="gray"></ion-icon>
+            </ion-range>
+          </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+            <button ion-button color="light" round>Procurar</button>
+        </ion-col>
+      </ion-row>
     </ion-grid>
-  
+  </form>
+
+
+
 </ion-content>
