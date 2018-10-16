@@ -3,7 +3,6 @@ page-escolha {
         background: linear-gradient(to bottom, color($colors,primary) 70%, color($colors, light));
     }
 
-
     .cabecalho{
         width: 100%;
     }
@@ -16,24 +15,28 @@ page-escolha {
 
     .fonte{
         font-size: 3rem;
-        overflow: hidden; 
+        overflow: hidden;
         margin: auto;
         white-space: normal;
-        animation: 
+        animation:
             typing 3.5s steps(40, end),
             blink-caret .75s step-end infinite;
         text-overflow: ellipsis;
         flex-wrap: wrap;
     }
-    
+
+    ion-row {
+      height: 100px;
+    }
+
     @keyframes typing {
         from { width: 0 }
         to { width: 100% }
     }
-    
+
     @keyframes blink-caret {
         from, to { border-color: transparent }
         50% { border-color: color($colors, primary) }
     }
-        
+
 }
