@@ -12,8 +12,8 @@
       </ion-col>
       <ion-col col-7></ion-col>
       <ion-col align-self-end>
-        <button ion-button color="gray" outline round>O que é</button>
-        <button ion-button color="gray" outline round>Sobre Nós</button>
+        <button ion-button color="gray" (click)="goSobrePistacheiPage();" outline round>O que é</button>
+        <button ion-button color="gray" (click)="goSobreNosPage();" outline round>Sobre Nós</button>
         <button ion-button color="gray" round>Entrar</button>
       </ion-col>
     </ion-row>
@@ -110,7 +110,7 @@
       </ion-row>
       <ion-row>
         <ion-col text-center>
-            <button ion-button color="light" round>Procurar</button>
+            <button ion-button color="light" (click)="goMelhorCelularPage();" round>Procurar</button>
         </ion-col>
       </ion-row>
     </ion-grid>

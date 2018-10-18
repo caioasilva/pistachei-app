@@ -3,8 +3,8 @@
 
 
 <ion-content padding class="bg">
-  
-  
+
+
   <ion-grid class="cabecalho">
     <ion-row justify-content-end>
       <ion-col>
@@ -12,13 +12,13 @@
       </ion-col>
       <ion-col col-7></ion-col>
       <ion-col align-self-end>
-        <button ion-button color="gray" outline round>O que é</button>
-        <button ion-button color="gray" outline round>Sobre Nós</button>
-        <button ion-button color="gray" round>Entrar</button>      
+        <button ion-button color="gray" (click)="goSobrePistacheiPage();" outline round>O que é</button>
+        <button ion-button color="gray" (click)="goSobreNosPage();" outline round>Sobre Nós</button>
+        <button ion-button color="gray" round>Entrar</button>
       </ion-col>
-    </ion-row>  
+    </ion-row>
   </ion-grid>
-      
+
 
 
 
@@ -35,11 +35,11 @@
               <button ion-button color="light" (click)="goEscolhaPage();"  large round>Começar</button>
           </ion-col>
         </ion-row>
-      </ion-col>  
+      </ion-col>
       <ion-col col-4>
           <ion-img style="background: transparent" height="500px" width="500px" src="/assets/imgs/smartphone.gif"></ion-img>
       </ion-col>
     </ion-row>
   </ion-grid>
-  
+
 </ion-content>

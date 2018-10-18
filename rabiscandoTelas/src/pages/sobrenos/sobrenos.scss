@@ -1,0 +1,26 @@
+page-sobrenos {
+  .bg{
+    background: linear-gradient(to bottom, color($colors,primary) 70%, color($colors, light));
+  }
+
+  .total {
+    height: 100%;
+    width: 100%;
+  }
+
+  .center{
+    height: 70%;
+    align-items: center;
+  }
+
+
+
+  .fonte{
+    font-size: 4.5rem;
+  }
+
+
+  .cabecalho{
+    width: 100%;
+  }
+}
