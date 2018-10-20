@@ -1,44 +1,33 @@
-<ion-header></ion-header>
+<ion-header>
+  <ion-navbar>
+    <ion-grid class="cabecalho">
+      <ion-row justify-content-end>
+        <ion-col>
+          <ion-label color="gray"><ion-icon name="bulb"></ion-icon>Espertophone</ion-label>
+        </ion-col>
+        <ion-col align-self-end offset-7>
+          <button ion-button color="gray" (click)="goSobrePistacheiPage();" outline round>O que é</button>
+          <button ion-button color="gray" (click)="goSobreNosPage();" outline round>Sobre Nós</button>
+          <button ion-button color="gray" round>Entrar</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-navbar>
+</ion-header>
 
 
-
-<ion-content padding class="bg">
-
-
-  <ion-grid class="cabecalho">
-    <ion-row justify-content-end>
+<ion-content class="bg">
+  
+  <ion-grid class="total">
+    <ion-row>
       <ion-col>
-        <ion-label color="gray"><ion-icon name="bulb"></ion-icon>Espertophone</ion-label>
-      </ion-col>
-      <ion-col col-7></ion-col>
-      <ion-col align-self-end>
-        <button ion-button color="gray" (click)="goSobrePistacheiPage();" outline round>O que é</button>
-        <button ion-button color="gray" (click)="goSobreNosPage();" outline round>Sobre Nós</button>
-        <button ion-button color="gray" round>Entrar</button>
+        <h1 text-center ion-text class="fonte" color="dark">Encontre o celular perfeito pra <br> <b>você</b>! </h1>
       </ion-col>
     </ion-row>
-  </ion-grid>
-
-
-
-
-  <ion-grid class="total">
-    <ion-row justify-content-around class="center">
-      <ion-col col-4>
-        <ion-row>
-          <ion-col>
-              <h1 ion-text class="fonte" color="light">Encontre o celular perfeito pra <b>você</b>! </h1>
-          </ion-col>
-        </ion-row>
-        <ion-row text-center>
-          <ion-col text-left>
-              <button ion-button color="light" (click)="goEscolhaPage();"  large round>Começar</button>
-          </ion-col>
-        </ion-row>
-      </ion-col>
-      <ion-col col-4>
-          <ion-img style="background: transparent" height="500px" width="500px" src="/assets/imgs/smartphone.gif"></ion-img>
-      </ion-col>
+    <ion-row>
+      <ion-col text-center>
+      <button ion-button color="dark" (click)="goEscolhaPage();"  large round>Começar</button>
+    </ion-col>
     </ion-row>
   </ion-grid>
 
