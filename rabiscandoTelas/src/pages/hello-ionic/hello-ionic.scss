@@ -1,19 +1,13 @@
 page-hello-ionic {
     .bg{
-        background: linear-gradient(to bottom, color($colors,primary) 70%, color($colors, light));
+        background: color($colors, primary)
     }
 
     .total {
         height: 100%;
         width: 100%;
+        align-self: center;
     }
-
-    .center{
-        height: 70%;
-        align-items: center;
-    }
-
-
 
     .fonte{
         font-size: 4.5rem;
@@ -23,4 +17,5 @@ page-hello-ionic {
     .cabecalho{
         width: 100%;
     }
+    
 }
