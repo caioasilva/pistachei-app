@@ -1,21 +1,20 @@
 page-hello-ionic {
-    .bg{
-        background: color($colors, primary)
-    }
+  .bg{
+    background: color($colors, primary)
+  }
 
-    .total {
-        height: 100%;
-        width: 100%;
-        align-self: center;
-    }
+  .total {
+      height: 100%;
+      width: 100%;
+      align-self: center;
+  }
 
-    .fonte{
-        font-size: 4.5rem;
-    }
+  .fonte{
+    font-size: 4.5rem;
+  }
 
-
-    .cabecalho{
-        width: 100%;
-    }
-    
+  .center{
+    height: 85%;
+    align-items: center;
+  }
 }

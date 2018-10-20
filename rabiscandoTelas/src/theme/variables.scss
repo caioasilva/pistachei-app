@@ -8,7 +8,6 @@ $font-family-md-base: "Roboto";
 $font-family-ios-base: "Roboto";
 $font-family-wp-base: "Roboto";
 
-
 // The app direction is used to include
 // rtl styles in your app. For more info, please see:
 // http://ionicframework.com/docs/theming/rtl-support/
@@ -90,3 +89,9 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+// classes :)
+
+.button-cabecalho{
+  width:125px;
+}
