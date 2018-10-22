@@ -2,13 +2,12 @@
   <ion-navbar color="primary">
     <ion-grid>
       <ion-row justify-content-end>
-        <ion-col col-auto text-left>
-          <ion-label color="white"><ion-icon name="bulb"></ion-icon>Espertophone</ion-label>
+        <ion-col>
+          <ion-label color="gray"><ion-icon name="bulb"></ion-icon>Espertophone</ion-label>
         </ion-col>
-        <ion-col align-self-end text-right>
-          <button ion-button color="white" (click)="goSobrePistacheiPage();" outline round class="button-cabecalho">O que é</button>
-          <button ion-button color="white" (click)="goSobreNosPage();" outline round class="button-cabecalho">Sobre Nós</button>
-        </ion-col>
+        <ion-fab>
+          <button ion-fab color="light-gray" (click)="goSobrePistacheiPage();" mini class="button-cabecalho">?</button>
+        </ion-fab>
       </ion-row>
     </ion-grid>
   </ion-navbar>

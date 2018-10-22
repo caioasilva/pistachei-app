@@ -37,14 +37,25 @@ $app-direction: ltr;
 
 $colors: (
   primary:    #64c854,
-  secondary:  #00BDC6,
+  secondary:  rgb(255, 255, 255),
   danger:     #f53d3d,
   light:      #f4f4f4,
   white:      #fff,
   dark:       #222,
-  gray:       #555
+  gray:       #555,
+  light-gray:       rgb(240, 240, 240)
 );
 
+/*$colors: (
+  primary:    #d4eed0,
+  secondary:  rgb(238, 233, 221),
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  white:      #fff,
+  dark:       rgb(63, 59, 50),
+  gray:       #555,
+  light-gray:       rgb(224, 219, 207)
+); // cores tentativa rafael */
 
 // App iOS Variables
 // --------------------------------------------------
