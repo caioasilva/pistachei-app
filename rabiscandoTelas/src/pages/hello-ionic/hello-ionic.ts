@@ -1,7 +1,6 @@
-import { EscolhaPage } from './../escolha/escolha';
-import { SobrePistacheiPage } from './../sobrepistachei/sobrepistachei';
 import { Component } from '@angular/core';
 import { NavController} from 'ionic-angular';
+import { InstrucoesPage } from '../intrucoes/instrucoes';
 
 @Component({
   selector: 'page-hello-ionic',
@@ -11,12 +10,7 @@ export class HelloIonicPage {
   constructor(public navCtrl: NavController) {
   };
 
-  public goEscolhaPage(){
-    this.navCtrl.push(EscolhaPage);
+  public goInstrucoesPage(){
+    this.navCtrl.push(InstrucoesPage, {}, {animate: true, animation:'modal-scale-up-enter', direction: 'forward'});
   };
-
-  public goSobrePistacheiPage(){
-    this.navCtrl.push(SobrePistacheiPage);
-  };
-
 }

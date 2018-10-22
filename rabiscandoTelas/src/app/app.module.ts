@@ -9,6 +9,7 @@ import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { EscolhaPage } from '../pages/escolha/escolha';
 import { MelhorCelularPage } from '../pages/melhorcelular/melhorcelular';
 import { SobrePistacheiPage } from '../pages/sobrepistachei/sobrepistachei';
+import { InstrucoesPage } from '../pages/intrucoes/instrucoes';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -20,6 +21,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     EscolhaPage,
     MelhorCelularPage,
     SobrePistacheiPage,
+    InstrucoesPage,
   ],
   imports: [
     BrowserModule,
@@ -34,6 +36,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     EscolhaPage,
     MelhorCelularPage,
     SobrePistacheiPage,
+    InstrucoesPage,
   ],
   providers: [
     StatusBar,

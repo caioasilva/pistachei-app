@@ -1,6 +1,7 @@
 page-hello-ionic {
   .bg{
-    background: color($colors, primary)
+    background: color($colors, primary);
+    display: flex
   }
 
   .total {
@@ -10,11 +11,25 @@ page-hello-ionic {
   }
 
   .fonte{
-    font-size: 4.5rem;
+    font-size: 3.5rem;
   }
 
   .center{
     height: 85%;
+    align-content: center;
     align-items: center;
+  }
+
+  .center-col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo{
+    background: transparent;
+    max-width: 400px;
+    width: 70%;
+    height: auto !important;
   }
 }

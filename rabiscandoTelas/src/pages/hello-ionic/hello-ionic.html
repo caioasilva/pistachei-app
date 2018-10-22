@@ -1,29 +1,16 @@
-<ion-header>
-  <ion-navbar color="secondary">
-    <ion-grid>
-      <ion-row justify-content-end>
-        <ion-col>
-          <ion-label color="gray"><ion-icon name="bulb"></ion-icon>Espertophone</ion-label>
-        </ion-col>
-        <ion-fab>
-          <button ion-fab color="light-gray" (click)="goSobrePistacheiPage();" mini class="button-cabecalho">?</button>
-        </ion-fab>
-      </ion-row>
-    </ion-grid>
-  </ion-navbar>
-</ion-header>
-
-
 <ion-content class="bg">
   <ion-grid justify-content-around class="total">
+
     <ion-row class="center">
-      <ion-col>
-        <h1 ion-text class="fonte" text-center color="dark">Encontre o celular perfeito pra <b>você</b>! </h1>
+      <ion-col  class="center-col">
+        <img class="logo" src="assets/img/pistachei1.png" />
+        <h1 ion-text class="fonte" text-center color="white">Encontre o celular perfeito pra <b>você</b>! </h1>
       </ion-col>
     </ion-row>
+
     <ion-row text-center>
       <ion-col>
-          <button ion-button color="dark" (click)="goEscolhaPage();" text-center large round>Começar</button>
+          <button ion-button color="dark" (click)="goInstrucoesPage();" text-center large round>Começar</button>
       </ion-col>
     </ion-row>
   </ion-grid>
