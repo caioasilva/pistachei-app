@@ -7,7 +7,6 @@ import { MyApp } from './app.component';
 
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { EscolhaPage } from '../pages/escolha/escolha';
-import { SobreNosPage } from '../pages/sobrenos/sobrenos';
 import { MelhorCelularPage } from '../pages/melhorcelular/melhorcelular';
 import { SobrePistacheiPage } from '../pages/sobrepistachei/sobrepistachei';
 
@@ -20,7 +19,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HelloIonicPage,
     EscolhaPage,
     MelhorCelularPage,
-    SobreNosPage,
     SobrePistacheiPage,
   ],
   imports: [
@@ -35,7 +33,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HelloIonicPage,
     EscolhaPage,
     MelhorCelularPage,
-    SobreNosPage,
     SobrePistacheiPage,
   ],
   providers: [

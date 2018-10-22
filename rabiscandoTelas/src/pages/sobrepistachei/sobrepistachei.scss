@@ -1,6 +1,6 @@
 page-sobrepistachei {
   .bg{
-    background: linear-gradient(to bottom, color($colors,primary) 70%, color($colors, light));
+    background: color($colors, primary)
   }
 
   .total {
@@ -9,7 +9,7 @@ page-sobrepistachei {
   }
 
   .center{
-    height: 70%;
+    height: 90%;
     align-items: center;
   }
 
