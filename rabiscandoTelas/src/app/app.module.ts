@@ -11,6 +11,8 @@ import { MelhorCelularPage } from '../pages/melhorcelular/melhorcelular';
 import { SobrePistacheiPage } from '../pages/sobrepistachei/sobrepistachei';
 import { InstrucoesPage } from '../pages/intrucoes/instrucoes';
 
+import { TypingAnimationDirective } from 'angular-typing-animation';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -22,6 +24,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MelhorCelularPage,
     SobrePistacheiPage,
     InstrucoesPage,
+    TypingAnimationDirective,
   ],
   imports: [
     BrowserModule,

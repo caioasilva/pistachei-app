@@ -3,19 +3,39 @@
 
     <ion-row class="center">
       <ion-col  class="center-col">
-        <h1 ion-text class="fonte typewriter" text-center color="white">
-          <p  class="typewriter-text">Vamos te ajudar a encontrar o melhor smartphone que se encaixe em seu cotidiano!<br><br></p>
-          <p>Mas como?<br><br></p>
-          <p>Você irá fazer comparações de acordo com o que é mais útil e importante, <br>além de colocar o quanto deseja pagar no smartphone</p>
-          <p>As comparações são entre câmera, tela, desempenho, bateria e armazenamento (quantidade de memória).</p>
-          <p>A partir desses dados, iremos mostrar os smartphones que mais combinam com você! :)</p>
-        </h1>
-      </ion-col>
+        <h1 ion-text color="white" text-center >
+          <span typingAnimation [typeSpeed]="50" [condition]="starts[0]" [startDelay]="1000" [hideCursorOnComplete]="true">
+            Vamos te ajudar a encontrar o smartphone que mais combina com seu cotidiano!
+          </span>
+          <br><br>
+          <span typingAnimation [typeSpeed]="50" [condition]="starts[1]" [startDelay]="1000" [hideCursorOnComplete]="true">                
+            Quer saber como?
+          </span>
+          <br><br>
+          <span typingAnimation [typeSpeed]="50" [condition]="starts[2]" [startDelay]="1000" [hideCursorOnComplete]="true">                
+            Você irá fazer comparações de acordo com o que é mais útil e importante, 
+          </span>
+          <br>
+          <span typingAnimation [typeSpeed]="50" [condition]="starts[3]" [startDelay]="0" [hideCursorOnComplete]="true">
+            além de colocar o quanto deseja pagar no smartphone.
+          </span>
+          <br><br>
+          <span typingAnimation [typeSpeed]="50" [condition]="starts[4]" [startDelay]="1000" [hideCursorOnComplete]="true">
+            As comparações são entre câmera, tela, desempenho, bateria e armazenamento interno.
+          </span>
+          <br><br>
+          <span typingAnimation [typeSpeed]="50" [condition]="starts[5]" [startDelay]="1000" [hideCursorOnComplete]="false">
+            A partir desses dados, iremos mostrar os smartphones que mais combinam com você! :)  
+            </span>
+          </h1>
+        </ion-col>
     </ion-row>
 
     <ion-row text-center>
       <ion-col>
+        <div>
           <button ion-button color="dark" (click)="goEscolhaPage();" text-center large round>Entendi! </button>
+        </div>
       </ion-col>
     </ion-row>
   </ion-grid>

@@ -30,7 +30,7 @@ export class MyApp {
 
     // set our app's pages
     this.pages = [
-      { title: 'Pistachei', component: HelloIonicPage },
+      {title: 'Pistachei', component: HelloIonicPage },
       {title: 'Pistachei', component: EscolhaPage},
       {title:'Pistachei', component: InstrucoesPage},
     ];
