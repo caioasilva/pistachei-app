@@ -10,12 +10,19 @@ page-hello-ionic {
       align-self: center;
   }
 
-  .fonte{
-    font-size: 3.5rem;
+  .slogan{
+    font-size: 2.2em;
+    height: 8rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
   }
 
+  .voce{
+    font-weight: 700;
+  }
+  
   .center{
-    height: 85%;
+    flex-grow: 1;
     align-content: center;
     align-items: center;
   }
@@ -31,6 +38,9 @@ page-hello-ionic {
     max-width: 400px;
     width: 70%;
     height: auto !important;
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
+  }
+  .footer{
+    margin-bottom: 1rem;
   }
 }

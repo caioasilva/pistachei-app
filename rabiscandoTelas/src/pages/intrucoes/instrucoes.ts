@@ -1,5 +1,5 @@
-import { NavController } from 'ionic-angular';
-import { Component } from "@angular/core";
+import { NavController, Platform } from 'ionic-angular';
+import { Component, OnInit } from "@angular/core";
 import { EscolhaPage } from '../escolha/escolha';
 
 @Component({
@@ -8,12 +8,17 @@ import { EscolhaPage } from '../escolha/escolha';
 })
 
 export class InstrucoesPage  implements OnInit {
-    constructor(public navCtrl: NavController){};
+    constructor(public navCtrl: NavController, platform: Platform){
+      platform.registerBackButtonAction(() => {
+        this.navCtrl.pop({animate: true, animation:'slide', direction: 'back'});
+      });
+    };
 
     public starts : Array<boolean> = [false,false,false,false,false,false];
 
 
     start: boolean = false;
+
 
     ngOnInit () {
       setTimeout(() => this.starts[0] = true, 1000);
@@ -25,6 +30,6 @@ export class InstrucoesPage  implements OnInit {
     }
 
     public goEscolhaPage(){
-        this.navCtrl.push(EscolhaPage   , {}, {animate: true, animation:'modal-scale-up-enter', direction: 'forward'});
+        this.navCtrl.push(EscolhaPage, {}, {animate: true, animation:'slide', direction: 'forward'});
       };
 } 

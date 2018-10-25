@@ -2,7 +2,7 @@ import { TooltipsModule } from 'ionic-tooltips';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, ErrorHandler } from '@angular/core';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { IonicApp, IonicModule, IonicErrorHandler, Config } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
@@ -15,6 +15,10 @@ import { TypingAnimationDirective } from 'angular-typing-animation';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+import { SlideTransition } from '../customclasses/slide.transition';
+import { SlideDownTransition } from '../customclasses/slide-down.transition';
+import { SlideUpTransition } from '../customclasses/slide-up.transition';
 
 @NgModule({
   declarations: [
@@ -47,4 +51,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
-export class AppModule {}
+export class AppModule {
+    constructor(private config: Config) {
+        this.config.setTransition("slide", SlideTransition);
+        this.config.setTransition("slidedown", SlideDownTransition);
+        this.config.setTransition("slideup", SlideUpTransition);
+    }
+}
+

@@ -17,6 +17,6 @@ export class HelloIonicPage implements OnInit  {
   }
   
   public goInstrucoesPage(){
-    this.navCtrl.push(InstrucoesPage, {}, {animate: true, animation:'modal-scale-up-enter', direction: 'forward'});
+    this.navCtrl.push(InstrucoesPage, {}, {animate: true, animation:'slide', direction: 'forward'});
   };
 }

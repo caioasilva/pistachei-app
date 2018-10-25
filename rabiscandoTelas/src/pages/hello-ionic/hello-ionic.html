@@ -4,17 +4,19 @@
     <ion-row class="center">
       <ion-col  class="center-col">
         <img class="logo" src="assets/img/Pistachei-logo-transparente.png" />
-        <h1 ion-text class="fonte" text-center color="white">
-              <span typingAnimation [typeSpeed]="50" [condition]="start" [startDelay]="500" [hideCursorOnComplete]="false">
-                Encontre o celular perfeito pra <b>você</b>! 
-              </span>
-          </h1>
+        <div ion-text class="slogan" text-center color="white">
+          <span typingAnimation [typeSpeed]="50" [condition]="start" [startDelay]="500" [hideCursorOnComplete]="false">
+            Encontre o celular perfeito para você! 
+          </span>
+        </div>
       </ion-col>
     </ion-row>
 
     <ion-row text-center>
       <ion-col>
+        <div class="footer">
           <button ion-button color="dark" (click)="goInstrucoesPage();" text-center large round>Começar</button>
+        </div>
       </ion-col>
     </ion-row>
   </ion-grid>
