@@ -1,10 +1,22 @@
+<ion-header no-border>
+  <ion-navbar color="primary">
+      <ion-buttons left>
+          <button ion-button icon-only (click)="navCtrl.pop({animate: true, animation:'pingu', direction: 'back'});" class="button-navbar">
+              <ion-icon name="arrow-back"></ion-icon>
+          </button>
+      </ion-buttons>
+      <ion-title text-center>
+        <img class="logo-navbar" src="assets/img/Pistachei-logo-transparente.png" />
+      </ion-title>
+      <ion-buttons right>
+        <button ion-button outline (click)="goSobrePistacheiPage();" class="button-navbar bar-button-round">
+            &nbsp;<ion-icon name="help"></ion-icon>&nbsp;
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
 <ion-content class="bg">
     <ion-grid justify-content-around class="total">
-        <ion-row text-center>
-            <ion-col>
-                <img class="logo" src="assets/img/Pistachei-logo-transparente.png" />
-            </ion-col>
-          </ion-row>
       <ion-row class="all-messages center-row">
         <ion-col col-11 class="container">
             <div class="message" *ngIf="starts[0]">

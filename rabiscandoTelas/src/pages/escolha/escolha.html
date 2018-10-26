@@ -1,19 +1,22 @@
 <ion-header>
   <ion-navbar color="primary">
-    <ion-grid>
-      <ion-row justify-content-end>
-        <ion-col>
-          <ion-label color="gray"><ion-icon name="bulb"></ion-icon>Espertophone</ion-label>
-        </ion-col>
-        <ion-fab>
-          <button ion-fab color="light-gray" (click)="goSobrePistacheiPage();" mini class="button-cabecalho">?</button>
-        </ion-fab>
-      </ion-row>
-    </ion-grid>
+      <ion-buttons left>
+          <button ion-button icon-only (click)="navCtrl.pop({animate: true, animation:'pingu', direction: 'back'});" class="button-navbar">
+              <ion-icon name="arrow-back"></ion-icon>
+          </button>
+      </ion-buttons>
+      <ion-title text-center>
+        <img class="logo-navbar" src="assets/img/Pistachei-logo-transparente.png" />
+      </ion-title>
+      <ion-buttons right>
+        <button ion-button outline (click)="goSobrePistacheiPage();" class="button-navbar bar-button-round">
+            &nbsp;<ion-icon name="help"></ion-icon>&nbsp;
+        </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding style="background: transparent">
   <form>
     <ion-grid col-12 col-sm-10 col-md-8 col-xl-6>
       <ion-row class="row-range">

@@ -13,10 +13,9 @@ export class EscolhaPage {
   }
 
   public goMelhorCelularPage(){
-    this.navCtrl.push(MelhorCelularPage);
+    this.navCtrl.push(MelhorCelularPage, {}, {animate: true, animation:'pingu', direction: 'forward'});
   };
-
   public goSobrePistacheiPage(){
-    this.navCtrl.push(SobrePistacheiPage);
+    this.navCtrl.push(SobrePistacheiPage, {}, {animate: true, animation:'pingu', direction: 'forward'});
   };
 }

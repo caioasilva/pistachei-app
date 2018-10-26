@@ -1,6 +1,7 @@
 import { NavController, Platform } from 'ionic-angular';
 import { Component, OnInit } from "@angular/core";
 import { EscolhaPage } from '../escolha/escolha';
+import { SobrePistacheiPage } from "../sobrepistachei/sobrepistachei"
 
 @Component({
     selector: 'page-instrucoes',
@@ -8,10 +9,7 @@ import { EscolhaPage } from '../escolha/escolha';
 })
 
 export class InstrucoesPage  implements OnInit {
-    constructor(public navCtrl: NavController, platform: Platform){
-      platform.registerBackButtonAction(() => {
-        this.navCtrl.pop({animate: true, animation:'slide', direction: 'back'});
-      });
+    constructor(public navCtrl: NavController){
     };
 
     public starts : Array<boolean> = [false,false,false,false,false,false];
@@ -30,6 +28,9 @@ export class InstrucoesPage  implements OnInit {
     }
 
     public goEscolhaPage(){
-        this.navCtrl.push(EscolhaPage, {}, {animate: true, animation:'slide', direction: 'forward'});
-      };
+      this.navCtrl.push(EscolhaPage, {}, {animate: true, animation:'pingu', direction: 'forward'});
+    };
+    public goSobrePistacheiPage(){
+      this.navCtrl.push(SobrePistacheiPage, {}, {animate: true, animation:'pingu', direction: 'forward'});
+    };
 } 
