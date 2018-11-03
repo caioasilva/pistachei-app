@@ -1,0 +1,116 @@
+<ion-header>
+  <ion-navbar color="primary">
+      <ion-buttons left>
+          <button ion-button icon-only (click)="navCtrl.pop({animate: true, animation:'pingu', direction: 'back'});" class="button-navbar">
+              <ion-icon name="arrow-back"></ion-icon>
+          </button>
+      </ion-buttons>
+      <ion-title text-center>
+        <img class="logo-navbar" src="assets/img/Pistachei-logo-transparente.png" />
+      </ion-title>
+      <ion-buttons right>
+        <button ion-button outline (click)="goSobrePistacheiPage();" class="button-navbar bar-button-round">
+            &nbsp;<ion-icon name="help"></ion-icon>&nbsp;
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="background: transparent">
+  <form>
+    <ion-grid col-12 col-sm-10 col-md-8 col-xl-6>
+      <ion-row class="row-range">
+        <ion-item style="background: transparent" text-wrap text-center no-lines>
+            <ion-label>
+                <h1 ion-text text-center color="dark">Ajuste de acordo com sua preferência.</h1>
+            </ion-label>
+        </ion-item>
+      </ion-row>
+      <ion-row class="row-range">
+        <ion-item style="background: transparent" no-lines>
+            <ion-range min="1" max="5" step="1" snaps="true" color="gray">
+              <ion-icon range-left name="camera" class="icons_camera" tooltip="Camera" navTooltip color="gray"></ion-icon>
+              <ion-icon range-right name="speedometer" class="icons_desempenho" tooltip="Desempenho" navTooltip color="gray"></ion-icon>
+            </ion-range>
+          </ion-item>
+      </ion-row>
+      <ion-row class="row-range">
+        <ion-item style="background: transparent" no-lines>
+            <ion-range min="1" max="5" step="1" snaps="true" color="gray">
+              <ion-icon range-left name="camera" class="icons_camera" tooltip="Camera" navTooltip color="gray"></ion-icon>
+              <ion-icon range-right name="phone-portrait" class="icons_tela" tooltip="Tamanho da tela" navTooltip color="gray"></ion-icon>
+            </ion-range>
+          </ion-item>
+      </ion-row>
+      <ion-row class="row-range">
+        <ion-item style="background: transparent" no-lines>
+            <ion-range min="1" max="5" step="1" snaps="true" color="gray">
+              <ion-icon range-left name="camera" class="icons_camera" tooltip="Camera" navTooltip color="gray"></ion-icon>
+              <ion-icon range-right name="battery-charging" class="icons_bateria" tooltip="Bateria" navTooltip color="gray"></ion-icon>
+            </ion-range>
+          </ion-item>
+      </ion-row>
+      <ion-row class="row-range">
+        <ion-item style="background: transparent" no-lines>
+            <ion-range min="1" max="5" step="1" snaps="true" color="gray">
+              <ion-icon range-left name="camera" class="icons_camera" tooltip="Camera" navTooltip color="gray"></ion-icon>
+              <ion-icon range-right name="archive" class="icons_arquivo" tooltip="Armazenamento" navTooltip color="gray"></ion-icon>
+            </ion-range>
+          </ion-item>
+      </ion-row>
+      <ion-row class="row-range">
+        <ion-item style="background: transparent" no-lines>
+            <ion-range min="1" max="5" step="1" snaps="true" color="gray">
+              <ion-icon range-left name="speedometer" class="icons_desempenho" tooltip="Desempenho" navTooltip color="gray"></ion-icon>
+              <ion-icon range-right name="phone-portrait" class="icons_tela" tooltip="Tamanho da tela" navTooltip color="gray"></ion-icon>
+            </ion-range>
+          </ion-item>
+      </ion-row>
+      <ion-row class="row-range">
+        <ion-item style="background: transparent" no-lines>
+            <ion-range min="1" max="5" step="1" snaps="true" color="gray">
+              <ion-icon range-left name="speedometer" class="icons_desempenho" tooltip="Desempenho" navTooltip color="gray"></ion-icon>
+              <ion-icon range-right name="battery-charging" class="icons_bateria" tooltip="Bateria" navTooltip color="gray"></ion-icon>
+            </ion-range>
+          </ion-item>
+      </ion-row>
+      <ion-row class="row-range">
+        <ion-item style="background: transparent" no-lines>
+            <ion-range min="1" max="5" step="1" snaps="true" color="gray">
+              <ion-icon range-left name="speedometer" class="icons_desempenho" tooltip="Desempenho" navTooltip color="gray"></ion-icon>
+              <ion-icon range-right name="archive" class="icons_arquivo" tooltip="Armazenamento" navTooltip color="gray"></ion-icon>
+            </ion-range>
+          </ion-item>
+      </ion-row>
+      <ion-row class="row-range">
+        <ion-item style="background: transparent" no-lines>
+            <ion-range min="1" max="5" step="1" snaps="true" color="gray">
+              <ion-icon range-left name="phone-portrait" class="icons_tela" tooltip="Tamanho da tela" navTooltip color="gray"></ion-icon>
+              <ion-icon range-right name="battery-charging" class="icons_bateria" tooltip="Bateria" navTooltip color="gray"></ion-icon>
+            </ion-range>
+          </ion-item>
+      </ion-row>
+      <ion-row class="row-range">
+        <ion-item style="background: transparent" no-lines>
+            <ion-range min="1" max="5" step="1" snaps="true" color="gray">
+              <ion-icon range-left name="phone-portrait" class="icons_tela" tooltip="Tamanho da tela" navTooltip color="gray"></ion-icon>
+              <ion-icon range-right name="archive" class="icons_arquivo" tooltip="Armazenamento" navTooltip color="gray"></ion-icon>
+            </ion-range>
+          </ion-item>
+      </ion-row>
+      <ion-row class="row-range">
+        <ion-item style="background: transparent" no-lines>
+            <ion-range min="1" max="5" step="1" snaps="true" color="gray">
+              <ion-icon range-left name="battery-charging" class="icons_bateria" tooltip="Bateria" navTooltip color="gray"></ion-icon>
+              <ion-icon range-right name="archive" class="icons_arquivo" tooltip="Armazenamento" navTooltip color="gray"></ion-icon>
+            </ion-range>
+          </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+            <button ion-button color="dark" (click)="goMelhorCelularPage();" round>Procurar</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

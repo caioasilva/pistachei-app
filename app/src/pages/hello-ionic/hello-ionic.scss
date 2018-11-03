@@ -1,0 +1,44 @@
+page-hello-ionic {
+  .bg{
+    background: color($colors, primary);
+    display: flex
+  }
+
+  .total {
+      height: 100%;
+      width: 100%;
+      align-self: center;
+  }
+
+  .slogan{
+    font-size: 2.2em;
+    height: 8rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+  }
+
+  .voce{
+    font-weight: 700;
+  }
+  
+  .center{
+    flex-grow: 1;
+    align-content: center;
+    align-items: center;
+  }
+
+  .center-col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo{
+    background: transparent;
+    max-width: 400px;
+    width: 70%;
+    height: auto !important;
+    margin-bottom: 6rem;
+
+  }
+}
