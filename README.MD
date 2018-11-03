@@ -4,7 +4,8 @@
 ## API de calculo
 
 Um banco de dados base está disponível no arquivo smartdata.sql. Importar para um servidor MySQL. Criar uma venv e importar as bibliotecas definidas no arquivo requirements.txt
-Para iniciar o servidor da API executar:
+
+Para iniciar o servidor da API executar, tendo a venv ativada:
 
     python3 api.py runserver
 ## APP
