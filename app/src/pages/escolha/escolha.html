@@ -17,7 +17,7 @@
 </ion-header>
 
 <ion-content padding style="background: transparent">
-  <form>
+  <form (ngSubmit)="goMelhorCelularPage()" method="GET">
     <ion-grid col-12 col-sm-10 col-md-8 col-xl-6>
       <ion-row class="row-range">
         <ion-item style="background: transparent" text-wrap text-center no-lines>
@@ -27,88 +27,51 @@
         </ion-item>
       </ion-row>
       <ion-row class="row-range">
+        <ion-item style="background: transparent" text-wrap text-center no-lines>
+            <ion-label>
+                Valor maximo:
+            </ion-label>
+            <ion-input type="number" min="1" step="any" [formControl]="dados.controls['precoMax']" name="valorMax"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row class="row-range">
         <ion-item style="background: transparent" no-lines>
-            <ion-range min="1" max="5" step="1" snaps="true" color="gray">
+            <ion-range [formControl]="dados.controls['camera']"  name="notaCamera" min="1" max="5" step="1" snaps="true" color="gray">
               <ion-icon range-left name="camera" class="icons_camera" tooltip="Camera" navTooltip color="gray"></ion-icon>
-              <ion-icon range-right name="speedometer" class="icons_desempenho" tooltip="Desempenho" navTooltip color="gray"></ion-icon>
             </ion-range>
           </ion-item>
       </ion-row>
       <ion-row class="row-range">
         <ion-item style="background: transparent" no-lines>
-            <ion-range min="1" max="5" step="1" snaps="true" color="gray">
-              <ion-icon range-left name="camera" class="icons_camera" tooltip="Camera" navTooltip color="gray"></ion-icon>
-              <ion-icon range-right name="phone-portrait" class="icons_tela" tooltip="Tamanho da tela" navTooltip color="gray"></ion-icon>
-            </ion-range>
-          </ion-item>
-      </ion-row>
-      <ion-row class="row-range">
-        <ion-item style="background: transparent" no-lines>
-            <ion-range min="1" max="5" step="1" snaps="true" color="gray">
-              <ion-icon range-left name="camera" class="icons_camera" tooltip="Camera" navTooltip color="gray"></ion-icon>
-              <ion-icon range-right name="battery-charging" class="icons_bateria" tooltip="Bateria" navTooltip color="gray"></ion-icon>
-            </ion-range>
-          </ion-item>
-      </ion-row>
-      <ion-row class="row-range">
-        <ion-item style="background: transparent" no-lines>
-            <ion-range min="1" max="5" step="1" snaps="true" color="gray">
-              <ion-icon range-left name="camera" class="icons_camera" tooltip="Camera" navTooltip color="gray"></ion-icon>
-              <ion-icon range-right name="archive" class="icons_arquivo" tooltip="Armazenamento" navTooltip color="gray"></ion-icon>
-            </ion-range>
-          </ion-item>
-      </ion-row>
-      <ion-row class="row-range">
-        <ion-item style="background: transparent" no-lines>
-            <ion-range min="1" max="5" step="1" snaps="true" color="gray">
+            <ion-range [formControl]="dados.controls['desempenho']" name="notaDesempenho" min="1" max="5" step="1" snaps="true" color="gray">
               <ion-icon range-left name="speedometer" class="icons_desempenho" tooltip="Desempenho" navTooltip color="gray"></ion-icon>
-              <ion-icon range-right name="phone-portrait" class="icons_tela" tooltip="Tamanho da tela" navTooltip color="gray"></ion-icon>
             </ion-range>
           </ion-item>
       </ion-row>
       <ion-row class="row-range">
         <ion-item style="background: transparent" no-lines>
-            <ion-range min="1" max="5" step="1" snaps="true" color="gray">
-              <ion-icon range-left name="speedometer" class="icons_desempenho" tooltip="Desempenho" navTooltip color="gray"></ion-icon>
-              <ion-icon range-right name="battery-charging" class="icons_bateria" tooltip="Bateria" navTooltip color="gray"></ion-icon>
-            </ion-range>
-          </ion-item>
-      </ion-row>
-      <ion-row class="row-range">
-        <ion-item style="background: transparent" no-lines>
-            <ion-range min="1" max="5" step="1" snaps="true" color="gray">
-              <ion-icon range-left name="speedometer" class="icons_desempenho" tooltip="Desempenho" navTooltip color="gray"></ion-icon>
-              <ion-icon range-right name="archive" class="icons_arquivo" tooltip="Armazenamento" navTooltip color="gray"></ion-icon>
-            </ion-range>
-          </ion-item>
-      </ion-row>
-      <ion-row class="row-range">
-        <ion-item style="background: transparent" no-lines>
-            <ion-range min="1" max="5" step="1" snaps="true" color="gray">
+            <ion-range [formControl]="dados.controls['tela']" name="notaTela" min="1" max="5" step="1" snaps="true" color="gray">
               <ion-icon range-left name="phone-portrait" class="icons_tela" tooltip="Tamanho da tela" navTooltip color="gray"></ion-icon>
-              <ion-icon range-right name="battery-charging" class="icons_bateria" tooltip="Bateria" navTooltip color="gray"></ion-icon>
             </ion-range>
           </ion-item>
       </ion-row>
       <ion-row class="row-range">
         <ion-item style="background: transparent" no-lines>
-            <ion-range min="1" max="5" step="1" snaps="true" color="gray">
-              <ion-icon range-left name="phone-portrait" class="icons_tela" tooltip="Tamanho da tela" navTooltip color="gray"></ion-icon>
-              <ion-icon range-right name="archive" class="icons_arquivo" tooltip="Armazenamento" navTooltip color="gray"></ion-icon>
+            <ion-range [formControl]="dados.controls['armazenamento']" name="notaArmazenamento" min="1" max="5" step="1" snaps="true" color="gray">
+              <ion-icon range-left name="archive" class="icons_tela" tooltip="Tamanho da tela" navTooltip color="gray"></ion-icon>
             </ion-range>
           </ion-item>
       </ion-row>
       <ion-row class="row-range">
         <ion-item style="background: transparent" no-lines>
-            <ion-range min="1" max="5" step="1" snaps="true" color="gray">
+            <ion-range [formControl]="dados.controls['bateria']" name="notaBateria" min="1" max="5" step="1" snaps="true" color="gray">
               <ion-icon range-left name="battery-charging" class="icons_bateria" tooltip="Bateria" navTooltip color="gray"></ion-icon>
-              <ion-icon range-right name="archive" class="icons_arquivo" tooltip="Armazenamento" navTooltip color="gray"></ion-icon>
             </ion-range>
           </ion-item>
       </ion-row>
       <ion-row>
         <ion-col text-center>
-            <button ion-button color="dark" (click)="goMelhorCelularPage();" round>Procurar</button>
+            <button ion-button color="dark" type="submit" round>Procurar</button>
         </ion-col>
       </ion-row>
     </ion-grid>
