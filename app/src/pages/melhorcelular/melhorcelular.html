@@ -23,7 +23,7 @@
 </ion-header>
 
 
-<ion-content padding class="bg">
+<ion-content padding>
   <ion-grid col-12 col-sm-10 col-md-8 col-xl-6>
     <ion-row>
       <ion-item style="background: transparent" text-wrap text-center no-lines>
@@ -34,13 +34,14 @@
     </ion-row>
     <ion-row text-center>
       <ion-col >
-          <ion-img width="150" height="250" text-center src="/assets/img/celular.jpg"></ion-img>
+          <ion-img text-center src="{{primeiro['imagem']}}"></ion-img>
       </ion-col>
 
     </ion-row>
     <ion-row>
       <ion-label>
-          <h1 ion-text text-center color="dark">Celular de suco</h1>
+          <h1 ion-text text-center color="dark">{{primeiro['marca']}} {{primeiro['modelo']}}</h1>
+          <h1 ion-text text-center>R$ {{primeiro['precoMin']}}</h1>
       </ion-label>
     </ion-row>
   </ion-grid>

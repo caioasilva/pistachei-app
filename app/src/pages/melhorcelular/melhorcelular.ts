@@ -12,9 +12,17 @@ import { NavController, NavParams } from 'ionic-angular';
   selector: 'page-melhorcelular',
   templateUrl: 'melhorcelular.html',
 })
+
 export class MelhorCelularPage {
+  resultado = Array;
+  primeiro = Object;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.resultado = navParams.get('resultado');
+    this.primeiro = this.resultado[0];
+  
+
+    console.log(this.resultado)
   }
 
   ionViewDidLoad() {

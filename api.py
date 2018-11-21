@@ -1,5 +1,6 @@
 from flask import Flask, request
 from flask_script import Server, Manager
+from flask_cors import CORS
 import Calculo_v1
 import Calculo_v2
 from flaskext.mysql import MySQL
@@ -7,6 +8,7 @@ import simplejson
 
 app = Flask(__name__)
 app.debug = True
+CORS(app)
 manager = Manager(app)
 manager.add_command("runserver", Server())
 
@@ -42,17 +44,27 @@ def calcula_v2():
     try:
         conn = mysql.connect()
         cursor = conn.cursor()
-        precoMax = request.form.get('precoMax')
+        precoMax = request.form.get('precoMax', 0)
+
+        if precoMax == 0 or len(request.form) != 6:
+            print(request.form)
+            raise ValueError("POST Inválido")
+
+
         entrada = [int(request.form.get('camera')), int(request.form.get('desempenho')), int(request.form.get('tela')),
                    int(request.form.get('bateria')), int(request.form.get('armazenamento'))]
         results = Calculo_v2.Calculo(cursor, precoMax, entrada).resultado()
         return simplejson.dumps({'resultado': results})
-
+    except ValueError as e:
+        return simplejson.dumps({'erro': str(e)}), 400
     except Exception as e:
-        return simplejson.dumps({'erro': str(e)}), 403
+        return simplejson.dumps({'erro': str(e)}), 500
     finally:
-        cursor.close()
-        conn.close()
+        if 'cursor' not in locals():
+            print("Erro: O BD está rodando?")
+        else:
+            cursor.close()
+            conn.close()
 
 
 if __name__ == "__main__":

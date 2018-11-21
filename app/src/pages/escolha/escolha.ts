@@ -5,7 +5,6 @@ import { SobrePistacheiPage } from './../sobrepistachei/sobrepistachei';
 import { FormBuilder } from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
 import { HttpClient }    from '@angular/common/http';
-import { URLSearchParams } from '@angular/http';
 import { HtmlAstPath } from '@angular/compiler';
 import { Observable } from 'rxjs/Observable';
 
@@ -16,40 +15,42 @@ import { Observable } from 'rxjs/Observable';
 export class EscolhaPage {
 
   dados = this.formBuilder.group({
-    precoMax: [800],
-    camera: [],
-    desempenho: [],
-    tela: [],
-    bateria: [],
-    armazenamento: []
+    precoMax: [1000],
+    camera: [1],
+    desempenho: [1],
+    tela: [1],
+    bateria: [1],
+    armazenamento: [1]
   });
 
   constructor(public navCtrl: NavController,public formBuilder: FormBuilder, public http: HttpClient) {
-
   }
 
   public goMelhorCelularPage(){
-    let dados = new URLSearchParams();
-    dados.append('precoMax', String(this.dados.controls.precoMax));
-    dados.append('camera', String(this.dados.controls.camera));
-    dados.append('desempenho', String(this.dados.controls.desempenho));
-    dados.append('tela', String(this.dados.controls.tela));
-    dados.append('bateria', String(this.dados.controls.bateria));
-    dados.append('armazenamento', String(this.dados.controls.armazenamento));
-    this.http.post('http://127.0.0.1:5000/v2',dados).subscribe(data => {console.log('my data: ', data);});
-    //this.navCtrl.push(MelhorCelularPage, {dados: this.dados}, {animate: true, animation:'pingu', direction: 'forward'});
+    let httpData = new FormData();
+    httpData.append('precoMax', this.dados.controls.precoMax.value);
+    httpData.append('camera', this.dados.controls.camera.value);
+    httpData.append('desempenho', this.dados.controls.desempenho.value);
+    httpData.append('tela', this.dados.controls.tela.value);
+    httpData.append('bateria', this.dados.controls.bateria.value);
+    httpData.append('armazenamento', this.dados.controls.armazenamento.value);
+
+    this.http.post('http://127.0.0.1:5000/v2',httpData).subscribe(
+        data => {
+          if (data['resultado']){
+            this.navCtrl.push(MelhorCelularPage, {resultado: data['resultado']}, {animate: true, animation:'pingu', direction: 'forward'});
+          }
+        },
+        err => {
+          console.log(err);
+        }
+      );
+    
   };
   public goSobrePistacheiPage(){
     this.navCtrl.push(SobrePistacheiPage, {}, {animate: true, animation:'pingu', direction: 'forward'});
   };
-/*    let dados = new URLSearchParams();
-    dados.append('precoMax', String(this.dados.controls.precoMax));
-    dados.append('camera', String(this.dados.controls.camera));
-    dados.append('desempenho', String(this.dados.controls.desempenho));
-    dados.append('tela', String(this.dados.controls.tela));
-    dados.append('bateria', String(this.dados.controls.bateria));
-    dados.append('armazenamento', String(this.dados.controls.armazenamento));
-    */
+
 }
 
 
