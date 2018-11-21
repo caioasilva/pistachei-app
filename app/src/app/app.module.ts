@@ -21,6 +21,8 @@ import { SlideDownTransition } from '../customclasses/slide-down.transition';
 import { SlideUpTransition } from '../customclasses/slide-up.transition';
 import { PinguTransition } from '../customclasses/pingu-transition';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -36,6 +38,7 @@ import { PinguTransition } from '../customclasses/pingu-transition';
     IonicModule.forRoot(MyApp),
     BrowserAnimationsModule,
     TooltipsModule,
+    HttpClientModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
