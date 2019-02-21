@@ -5,6 +5,7 @@ import Calculo_v1
 import Calculo_v2
 from flaskext.mysql import MySQL
 import simplejson
+import datetime
 
 app = Flask(__name__)
 app.debug = True
@@ -54,7 +55,7 @@ def calcula_v2():
         entrada = [int(request.form.get('camera')), int(request.form.get('desempenho')), int(request.form.get('tela')),
                    int(request.form.get('bateria')), int(request.form.get('armazenamento'))]
         results = Calculo_v2.Calculo(cursor, precoMax, entrada).resultado()
-        return simplejson.dumps({'resultado': results})
+        return simplejson.dumps({'resultado': results}, default=datetime.datetime.isoformat)
     except ValueError as e:
         return simplejson.dumps({'erro': str(e)}), 400
     except Exception as e:

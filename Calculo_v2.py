@@ -91,37 +91,41 @@ class Calculo:
         # nota final dos critérios
         notaFinal = np.sum(matriz, axis=1)/5
 
+        max = notaFinal.argmax(axis=0)
+        notaFinal[max] *= 2
+
         self.notaCamera = notaFinal[0]
         self.notaDesempenho = notaFinal[1]
         self.notaTela = notaFinal[2]
         self.notaBateria = notaFinal[3]
         self.notaArmazenamento = notaFinal[4]
+
+
     
-        #print("\n\nNota camera " + str(notaCamera))
-        #print("Nota Desempenho " + str(notaDesempenho))
-        #print("Nota Tela " + str(notaTela))
-        #print("Nota Bateria " + str(notaBateria))
-        #print("Nota Armazenamento " + str(notaArmazenamento))
+        print("\n\nNota camera " + str(self.notaCamera))
+        print("Nota Desempenho " + str(self.notaDesempenho))
+        print("Nota Tela " + str(self.notaTela))
+        print("Nota Bateria " + str(self.notaBateria))
+        print("Nota Armazenamento " + str(self.notaArmazenamento))
 
     def consultaSQL(self):
         now = datetime.now()
 
         query = \
             "SELECT *,(" \
-            "`notaCamera` /5* "+str(self.notaCamera)+" + " \
-            "`notaTela` /5 * "+str(self.notaTela)+" + "\
-            "`notaDesempenho` /5 * "+str(self.notaDesempenho)+" +"\
-            "1/(2^(log2(constantes.`TOParmazenamento`) - log2(`armazenamentoMax`))) * "+str(self.notaArmazenamento)+" + "\
-            "`bateria` / constantes.`TOPbateria` * "+str(self.notaBateria)+" + " \
-            "  ("+str(self.precoMax)+" - `precoMin`)/"+str(self.precoMax)+ \
-            " + 1/(2^(log2(constantes.`TOPRAM`) - log2(`ramMax`))) * "+str(self.notaDesempenho)+"  + " \
+            "`notaCamera` * "+str(self.notaCamera)+" + " \
+            "`notaTela` * "+str(self.notaTela)+" + "\
+            "`notaDesempenho` * "+str(self.notaDesempenho)+" +"\
+            "1/(2^(log2(constantes.`TOParmazenamento`) - log2(`armazenamentoMax`))) * "+str(self.notaArmazenamento)+" + " \
+            "`bateria` / constantes.`TOPbateria` * "+str(self.notaBateria)+"" \
+            " + 1/(2^(log2(constantes.`TOPRAM`) - log2(`ramMax`))) * 0.5  * "+str(self.notaDesempenho)+"  + " \
             "1/(2^("+str(now.year)+"-`ano`)) )"\
             "  as `SCORE`"\
             "FROM `rawdata`, "\
-            "(SELECT MAX(`ramMax`) as `TOPRAM`, MAX(`armazenamentoMax`) as `TOParmazenamento`, MAX(`bateria`) as `TOPbateria`, (" + str(self.precoMax) + " " \
-                                            " - 0.6*("+str(self.precoMax)+" - MIN(`precoMin`))) as `MinPreco`  FROM `rawdata` WHERE `precoMin` > 0) as constantes "\
-            "WHERE `ano` > 2016 AND `precoMin` BETWEEN `MinPreco` AND " + str(self.precoMax) + " " \
-            "ORDER BY `SCORE` DESC LIMIT 10"
+            "(SELECT MAX(`ramMax`) as `TOPRAM`, MAX(`armazenamentoMax`) as `TOParmazenamento`, MAX(`bateria`) as `TOPbateria` " \
+            "FROM `rawdata` WHERE `precoMin` > 0) as constantes "\
+            "WHERE `ano` > 2017 AND `precoMin` > 0.3*" + str(self.precoMax) + " AND `precoMin` < " + str(self.precoMax) + ""\
+            " ORDER BY `SCORE` DESC LIMIT 10"
 
         #print(query)
 
