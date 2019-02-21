@@ -3,10 +3,7 @@ import { NavController} from 'ionic-angular';
 import { MelhorCelularPage } from './../melhorcelular/melhorcelular';
 import { SobrePistacheiPage } from './../sobrepistachei/sobrepistachei';
 import { FormBuilder } from '@angular/forms';
-import { HttpClientModule }    from '@angular/common/http';
 import { HttpClient }    from '@angular/common/http';
-import { HtmlAstPath } from '@angular/compiler';
-import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'page-escolha',
