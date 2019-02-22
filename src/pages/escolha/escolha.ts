@@ -32,7 +32,7 @@ export class EscolhaPage {
     httpData.append('bateria', this.dados.controls.bateria.value);
     httpData.append('armazenamento', this.dados.controls.armazenamento.value);
 
-    this.http.post('http://127.0.0.1:5000/v2',httpData).subscribe(
+    this.http.post('https://mateusbarros.pythonanywhere.com/v2',httpData).subscribe(
         data => {
           if (data['resultado']){
             this.navCtrl.push(MelhorCelularPage, {resultado: data['resultado']}, {animate: true, animation:'pingu', direction: 'forward'});
