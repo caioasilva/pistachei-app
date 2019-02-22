@@ -14,10 +14,10 @@ manager = Manager(app)
 manager.add_command("runserver", Server())
 
 mysql = MySQL()
-app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = ''
-app.config['MYSQL_DATABASE_DB'] = 'smartdata'
-app.config['MYSQL_DATABASE_HOST'] = 'localhost'
+app.config['MYSQL_DATABASE_USER'] = 'mateusbarros'
+app.config['MYSQL_DATABASE_PASSWORD'] = '112233aa'
+app.config['MYSQL_DATABASE_DB'] = 'mateusbarros$smartdata'
+app.config['MYSQL_DATABASE_HOST'] = 'mateusbarros.mysql.pythonanywhere-services.com'
 mysql.init_app(app)
 
 
