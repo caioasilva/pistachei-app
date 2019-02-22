@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 from flask_script import Server, Manager
 from flask_cors import CORS
 import Calculo_v1
@@ -60,6 +60,45 @@ def calcula_v2():
         return simplejson.dumps({'erro': str(e)}), 400
     except Exception as e:
         return simplejson.dumps({'erro': str(e)}), 500
+    finally:
+        if 'cursor' not in locals():
+            print("Erro: O BD está rodando?")
+        else:
+            cursor.close()
+            conn.close()
+
+@app.route('/')
+def home():
+    try:
+        conn = mysql.connect()
+        cursor = conn.cursor()
+
+        cursor.execute("SELECT tudocelularId, marca, modelo, ano FROM rawdata ORDER BY marca ASC")
+        res = cursor.fetchall()
+
+        return render_template('home.html', data=res)
+    except ValueError as e:
+        return str(e), 500
+    finally:
+        if 'cursor' not in locals():
+            print("Erro: O BD está rodando?")
+        else:
+            cursor.close()
+            conn.close()
+
+@app.route('/detalhes/<id>')
+def detalhes(id):
+    try:
+        conn = mysql.connect()
+        cursor = conn.cursor()
+
+        cursor.execute("SELECT * FROM rawdata WHERE tudocelularId = %s", (id))
+        columns = cursor.description
+        result = {columns[index][0]: column for index, column in enumerate(cursor.fetchone())}
+
+        return render_template('detalhes.html', data=result)
+    except ValueError as e:
+        return str(e), 500
     finally:
         if 'cursor' not in locals():
             print("Erro: O BD está rodando?")

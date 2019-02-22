@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pistachei - {{ data.marca }} {{ data.modelo }}</title>
+</head>
+<body>
+    <h1>Pistachei</h1>
+    <h2>{{data.marca}} {{data.modelo}}</h2>
+    <img src="{{data.imagem}}">
+    <table>
+        <tr>
+            <td>
+                Nota Camera:
+            </td>
+            <td>
+                {{data.notaCamera}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Nota Desempenho:
+            </td>
+            <td>
+                {{data.notaDesempenho}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Nota Tela:
+            </td>
+            <td>
+                {{data.notaTela}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Bateria:
+            </td>
+            <td>
+                {{data.bateria}} mAh
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Armazenamento:
+            </td>
+            <td>
+                {{data.armazenamentoMax}} GB
+            </td>
+        </tr>
+        <tr>
+            <td>
+                RAM:
+            </td>
+            <td>
+                {{data.ramMax}} GB
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Ano:
+            </td>
+            <td>
+                {{data.ano}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Sensor Digital:
+            </td>
+            <td>
+                {{data.sensorDigital}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Preço:
+            </td>
+            <td>
+                {{data.precoMin}} - {{data.precoMax}}
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
