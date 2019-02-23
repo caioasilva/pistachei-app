@@ -3,10 +3,7 @@ import { NavController} from 'ionic-angular';
 import { MelhorCelularPage } from './../melhorcelular/melhorcelular';
 import { SobrePistacheiPage } from './../sobrepistachei/sobrepistachei';
 import { FormBuilder } from '@angular/forms';
-import { HttpClientModule }    from '@angular/common/http';
 import { HttpClient }    from '@angular/common/http';
-import { HtmlAstPath } from '@angular/compiler';
-import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'page-escolha',
@@ -35,7 +32,7 @@ export class EscolhaPage {
     httpData.append('bateria', this.dados.controls.bateria.value);
     httpData.append('armazenamento', this.dados.controls.armazenamento.value);
 
-    this.http.post('http://127.0.0.1:5000/v2',httpData).subscribe(
+    this.http.post('https://mateusbarros.pythonanywhere.com/v2',httpData).subscribe(
         data => {
           if (data['resultado']){
             this.navCtrl.push(MelhorCelularPage, {resultado: data['resultado']}, {animate: true, animation:'pingu', direction: 'forward'});
