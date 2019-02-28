@@ -1,0 +1,31 @@
+// http://ionicframework.com/docs/theming/
+@import '~@ionic/angular/css/core.css';
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+@import './fonts/roboto.scss';
+
+.logo-navbar{
+    background: transparent;
+    max-width: 200px;
+    width: 95%;
+    height: auto !important;
+    max-height: 100%;
+    margin-bottom: 0.8rem;
+    margin-top: 1.0rem;
+}
+
+.button-navbar{
+    margin-left: 0.5rem !important;
+    margin-right: 0.5rem !important;
+}
+
+.white{
+    color:#ffffff;
+}

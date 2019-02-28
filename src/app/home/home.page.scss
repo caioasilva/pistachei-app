@@ -1,0 +1,46 @@
+.bg{
+    background: var(--ion-color-primary);
+    display: flex;
+  }
+
+  .total {
+      height: 100%;
+      width: 100%;
+      align-self: center;
+  }
+
+  .slogan{
+    font-size: 1.9rem;
+    height: 5rem;
+    margin-bottom: 1.8rem;
+    font-weight: 600;
+    color: white;
+  }
+
+  .voce{
+    font-weight: 700;
+  }
+  
+  .center{
+    flex-grow: 1;
+    align-content: center;
+    align-items: center;
+  }
+
+  .center-col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo{
+    background: transparent;
+    max-width: 400px;
+    width: 75%;
+    height: auto !important;
+    margin-bottom: 3.5rem;
+
+  }
+  .startbutton{
+    margin-bottom: 1rem;
+}

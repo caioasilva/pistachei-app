@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+        <ion-button routerLink="/" router-direction="root" shape="round" class="white button-navbar">
+            <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+          </ion-button>
+      </ion-buttons>
+    <ion-title text-center>
+        <img class="logo-navbar" src="assets/img/Pistachei-logo-transparente.png" />
+    </ion-title>
+    <ion-buttons slot="primary">
+        <ion-button shape="round" fill="outline" class="white button-navbar" style="width: 35px; height: 35px;">
+          <ion-icon slot="icon-only" name="help"></ion-icon>
+        </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg">
+    <ion-grid justify-content-around class="total">
+        <ion-row class="all-messages center-row">
+          <ion-col col-11 class="container">
+              <div class="message">
+                <span class="message-content">
+                  Vamos te ajudar a encontrar o smartphone que mais combina com seu cotidiano!
+                </span>
+              </div>
+              <br />
+              <div class="message"> 
+                <span class="message-content" >
+                  Quer saber como?
+                </span>
+              </div>
+              <br />
+              <div class="message"> 
+                <div class="message-content">
+                <span>
+                  Você irá fazer comparações de acordo com o que é mais útil e importante,
+                </span>
+                <span>
+                    além de colocar o quanto deseja pagar no smartphone.
+                </span>
+                </div>
+              </div>
+              <br />
+              <div class="message"> 
+                <span>
+                  As comparações são entre câmera, tela, desempenho, bateria e armazenamento interno.
+                </span>
+              </div>
+              <br />
+              <div class="message"> 
+                <span>
+                 A partir desses dados, iremos mostrar os smartphones que mais combinam com você! :)
+                </span>
+              </div>
+
+            </ion-col>
+        </ion-row>
+        <!-- <ion-row text-center>
+            <ion-col>
+              <div class="footer">
+                <ion-button (click)="goEscolhaPage();" color="dark" shape="round" size="large">Entendi!</ion-button>
+              </div>
+            </ion-col>
+        </ion-row> -->
+      </ion-grid>
+  </ion-content>
+
+  <ion-footer>
+      <ion-toolbar color="light" class="options">
+          <div class="option-list">
+              <ion-button shape="round" color="primary" strong>
+                Câmera
+              </ion-button>
+              <ion-button shape="round" color="primary" strong>
+                Performance
+              </ion-button>
+              <ion-button shape="round" color="primary" strong>
+                Tela
+              </ion-button>
+              <ion-button shape="round" color="primary" strong>
+                Armzenamento
+              </ion-button>
+              <ion-button shape="round" color="primary" strong>
+                Bateria
+              </ion-button>
+            </div>
+      </ion-toolbar>
+    </ion-footer>
+
