@@ -19,13 +19,10 @@ export class InstrucoesPage  implements OnInit {
 
 
     ngOnInit () {
-      setTimeout(() => this.starts[0] = true, 1000);
-      setTimeout(() => this.starts[1] = true, 7200);
-      setTimeout(() => this.starts[2] = true, 10000);
-      setTimeout(() => this.starts[3] = true, 15600);
-      setTimeout(() => this.starts[4] = true, 19800);
-      setTimeout(() => this.starts[5] = true, 27100);
+      setTimeout(() => this.starts[0] = true, 100);
     }
+    
+    public chat = 0;
 
     public goEscolhaPage(){
       this.navCtrl.push(EscolhaPage, {}, {animate: true, animation:'pingu', direction: 'forward'});
@@ -33,4 +30,9 @@ export class InstrucoesPage  implements OnInit {
     public goSobrePistacheiPage(){
       this.navCtrl.push(SobrePistacheiPage, {}, {animate: true, animation:'pingu', direction: 'forward'});
     };
+    
+    public onComplete(){
+      this.chat += 1;
+      this.starts[this.chat] = true;
+    }
 } 

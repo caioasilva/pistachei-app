@@ -20,36 +20,36 @@
       <ion-row class="all-messages center-row">
         <ion-col col-11 class="container">
             <div class="message" *ngIf="starts[0]">
-              <span class="message-content" typingAnimation [typeSpeed]="50" [condition]="starts[0]" [startDelay]="0" [hideCursorOnComplete]="true">
+              <span class="message-content" typingAnimation [typeSpeed]="30" [condition]="starts[0]" [startDelay]="0" [hideCursorOnComplete]="true" (complete)="onComplete()">
                 Vamos te ajudar a encontrar o smartphone que mais combina com seu cotidiano!
               </span>
             </div>
             <br />
             <div class="message" *ngIf="starts[1]"> 
-              <span class="message-content" typingAnimation [typeSpeed]="50" [condition]="starts[1]" [startDelay]="1000" [hideCursorOnComplete]="true">
+              <span class="message-content" typingAnimation [typeSpeed]="30" [condition]="starts[1]" [startDelay]="1000" [hideCursorOnComplete]="true" (complete)="onComplete()">
                 Quer saber como?
               </span>
             </div>
             <br />
             <div class="message" *ngIf="starts[2]"> 
               <div class="message-content">
-              <span typingAnimation [typeSpeed]="50" [condition]="starts[2]" [startDelay]="1000" [hideCursorOnComplete]="true">
+              <span typingAnimation [typeSpeed]="30" [condition]="starts[2]" [startDelay]="1000" [hideCursorOnComplete]="true" (complete)="onComplete()">
                 Você irá fazer comparações de acordo com o que é mais útil e importante,
               </span>
-              <span typingAnimation [typeSpeed]="50" [condition]="starts[3]" [startDelay]="0" [hideCursorOnComplete]="true">
+              <span typingAnimation [typeSpeed]="30" [condition]="starts[3]" [startDelay]="0" [hideCursorOnComplete]="true" (complete)="onComplete()">
                   além de colocar o quanto deseja pagar no smartphone.
               </span>
               </div>
             </div>
             <br />
             <div class="message" *ngIf="starts[4]"> 
-              <span class="message-content" typingAnimation [typeSpeed]="50" [condition]="starts[4]" [startDelay]="1000" [hideCursorOnComplete]="true">
+              <span class="message-content" typingAnimation [typeSpeed]="30" [condition]="starts[4]" [startDelay]="1000" [hideCursorOnComplete]="true" (complete)="onComplete()">
                 As comparações são entre câmera, tela, desempenho, bateria e armazenamento interno.
               </span>
             </div>
             <br />
             <div class="message" *ngIf="starts[5]"> 
-              <span class="message-content" typingAnimation [typeSpeed]="50" [condition]="starts[5]" [startDelay]="1000" [hideCursorOnComplete]="false">
+              <span class="message-content" typingAnimation [typeSpeed]="30" [condition]="starts[5]" [startDelay]="1000" [hideCursorOnComplete]="false" (complete)="onComplete()">
                A partir desses dados, iremos mostrar os smartphones que mais combinam com você! :)
               </span>
             </div>
