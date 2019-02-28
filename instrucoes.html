@@ -1,0 +1,87 @@
+<ion-header no-border>
+  <ion-navbar color="primary">
+      <ion-buttons left>
+          <button ion-button icon-only (click)="navCtrl.pop({animate: true, animation:'pingu', direction: 'back'});" class="button-navbar">
+              <ion-icon name="arrow-back"></ion-icon>
+          </button>
+      </ion-buttons>
+      <ion-title text-center>
+        <img class="logo-navbar" src="assets/img/Pistachei-logo-transparente.png" />
+      </ion-title>
+      <ion-buttons right>
+        <button ion-button outline (click)="goSobrePistacheiPage();" class="button-navbar bar-button-round">
+            &nbsp;<ion-icon name="help"></ion-icon>&nbsp;
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="bg">
+    <ion-grid justify-content-around class="total">
+      <ion-row class="all-messages center-row">
+        <ion-col col-11 class="container">
+            <div class="message" *ngIf="starts[0]">
+              <span class="message-content" typingAnimation [typeSpeed]="10" [condition]="starts[0]" [startDelay]="0" [hideCursorOnComplete]="true" (complete)="onComplete()">
+                Olá. Vamos te ajudar a encontrar os melhores smartphones para você. Pronto para começar? 
+              </span>
+            </div>
+            <br />
+            <div class="message" *ngIf="starts[1]"> 
+              <button ion-button (click)="onComplete();">Sim</button>
+            </div>
+            <br />
+            <div class="message" *ngIf="starts[2]"> 
+              <span class="message-content" typingAnimation [typeSpeed]="10" [condition]="starts[0]" [startDelay]="0" [hideCursorOnComplete]="true" (complete)="onComplete()">
+                Para você, o que é mais importante em um celular?
+              </span>
+            </div>
+            <br />
+            <div class="message" *ngIf="starts[3]"> 
+              <button ion-button navTooltip tooltip="Ka" (click)="onGostoClick(1);">Camera</button>
+              <button ion-button navTooltip tooltip="Ka" (click)="onGostoClick(2);">Desempenho</button>
+              <button ion-button navTooltip tooltip="Gos" (click)="onGostoClick(3);">Tamanho da tela</button>
+              <button ion-button navTooltip tooltip="To" (click)="onGostoClick(4);">Armazenamento</button>
+              <button ion-button navTooltip tooltip="So" (click)="onGostoClick(5);">Bateria</button>
+            </div>
+            <br />
+            <div class="message" *ngIf="starts[4]"> 
+              <span class="message-content" typingAnimation [typeSpeed]="10" [condition]="starts[0]" [startDelay]="0" [hideCursorOnComplete]="true" (complete)="onComplete()">
+                Legal! Entre essas que sobrou, qual a menos importante?
+              </span>
+            </div>
+            <br />
+            <div class="message" *ngIf="starts[5]"> 
+              <button ion-button navTooltip tooltip="Ka" (click)="onOdeioClick(1);">Camera</button>
+              <button ion-button navTooltip tooltip="Ka" (click)="onOdeioClick(2);">Desempenho</button>
+              <button ion-button navTooltip tooltip="Te" (click)="onOdeioClick(3);">Tamanho da tela</button>
+              <button ion-button navTooltip tooltip="Su" (click)="onOdeioClick(4);">Armazenamento</button>
+              <button ion-button navTooltip tooltip="Do" (click)="onOdeioClick(5);">Bateria</button>
+            </div>
+            <br />
+            <div class="message" *ngIf="starts[6]"> 
+              <span class="message-content" typingAnimation [typeSpeed]="10" [condition]="starts[0]" [startDelay]="0" [hideCursorOnComplete]="true" (complete)="onComplete()">
+                Agora, entre essas funções, qual você mais utiliza? 
+              </span>
+            </div>
+            <br />
+            <div class="message" *ngIf="starts[7]"> 
+              <button ion-button (click)="onFacoClick(1);">Tirar fotos</button>
+              <button ion-button (click)="onFacoClick(2);">Assistir vídeos</button>
+              <button ion-button (click)="onFacoClick(3);">Jogar</button>
+              <button ion-button (click)="onFacoClick(4);">Redes sociais</button>
+              <button ion-button (click)="onFacoClick(5);">Ligações</button>
+            </div>
+            <br />
+            <div class="message" *ngIf="starts[8]"> 
+              <span class="message-content" typingAnimation [typeSpeed]="10" [condition]="starts[0]" [startDelay]="0" [hideCursorOnComplete]="true" (complete)="onComplete()">
+                E por fim, qual o máximo de preço que você quer gastar com o seu próximo smartphone?
+              </span>
+            </div>
+            <br />
+            <div class="message" *ngIf="starts[9]"> 
+              <ion-input type="number" min="1" step="any" [formControl]="dados.controls['precoMax']" name="valorMax"></ion-input>
+              <button ion-button (click)="onComplete();">Ok</button>
+            </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-content>
