@@ -9,12 +9,16 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+import { pinguTransitionAnimation } from '../theme/pinguTransition';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
     BrowserModule, 
-    IonicModule.forRoot(), 
+    IonicModule.forRoot(
+      {navAnimation: pinguTransitionAnimation}
+    ), 
     AppRoutingModule
   ],
   providers: [

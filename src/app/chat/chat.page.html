@@ -1,9 +1,10 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-        <ion-button routerLink="/" router-direction="root" shape="round" class="white button-navbar">
+        <ion-back-button defaultHref="home"></ion-back-button>
+        <!-- <ion-button routerLink="/" router-direction="back" shape="round" class="white button-navbar">
             <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
-          </ion-button>
+          </ion-button> -->
       </ion-buttons>
     <ion-title text-center>
         <img class="logo-navbar" src="assets/img/Pistachei-logo-transparente.png" />
@@ -15,7 +16,7 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
+<div class="transition-fix"></div>
 <ion-content>
   <ion-list class="total">
       <ion-item *ngFor="let chat of chats" lines="none">
