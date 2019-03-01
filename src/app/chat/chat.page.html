@@ -16,8 +16,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="total">
-  <ion-list>
+<ion-content>
+  <ion-list class="total">
       <ion-item *ngFor="let chat of chats" lines="none">
         <div class="chat-right" *ngIf="chat.source === 'right'">
             <ion-text>{{chat.message}}</ion-text>
