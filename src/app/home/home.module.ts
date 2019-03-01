@@ -6,11 +6,14 @@ import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
 
+import { TypingAnimationModule } from 'angular-typing-animation'
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    TypingAnimationModule,
     RouterModule.forChild([
       {
         path: '',
