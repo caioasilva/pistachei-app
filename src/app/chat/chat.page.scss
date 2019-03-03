@@ -5,14 +5,30 @@
   padding-top: 2rem;
 }
 
-.chat-left{
-  flex-grow: 1;
-  text-align: left;
+.innermsg {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 5px;
+  font-weight: 500;
+  font-size: 16px;
+  border-radius: 15px;
+  margin-bottom: 5px;
 }
 
-.chat-right{
-  flex-grow: 1;
-  text-align: right;
+.innermsg.left {
+  float: left;
+  background-color: #F1F0F0;
+  color: black;
+}
+
+.innermsg.right {
+  float: right;
+  background-color: var(--ion-color-primary);
+  color: white;
+}
+
+.msgbubble {
+  margin-bottom: 10px;
 }
 
 .options{

@@ -17,17 +17,16 @@
   </ion-toolbar>
 </ion-header>
 <div class="transition-fix"></div>
-<ion-content>
-  <ion-list class="total">
-      <ion-item *ngFor="let chat of chats" lines="none">
-        <div class="chat-right" *ngIf="chat.source === 'right'">
-            <ion-text>{{chat.message}}</ion-text>
-        </div>
-        <div class="chat-left" *ngIf="chat.source !== 'right'">
-            <span typingAnimation [typeSpeed]="20" [startDelay]="400" [hideCursorOnComplete]="true" (complete)="nextMessage()">{{chat.message}}</span>
-        </div>
-      </ion-item>
-    </ion-list>
+<ion-content padding>
+  <div *ngFor="let chat of chats" lines="none" class="total">
+    <div class="innermsg right" *ngIf="chat.source === 'right'">
+        <ion-text>{{chat.message}}</ion-text>
+    </div>
+    <div class="innermsg left" *ngIf="chat.source !== 'right'">
+        <span typingAnimation [typeSpeed]="20" [startDelay]="400" [hideCursorOnComplete]="true" (complete)="nextMessage()">{{chat.message}}</span>
+    </div>
+    <br/>
+  </div>
     
   </ion-content>
 
