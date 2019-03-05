@@ -12,7 +12,8 @@ const routes: Routes = [
   {
     path: 'chat',
     loadChildren: './chat/chat.module#ChatPageModule'
-  },  { path: 'celulares', loadChildren: './celulares/celulares.module#CelularesPageModule' }
+  },  { path: 'celulares', loadChildren: './celulares/celulares.module#CelularesPageModule' },
+  { path: 'lista-celulares', loadChildren: './lista-celulares/lista-celulares.module#ListaCelularesPageModule' }
 
   // ,
   // {
