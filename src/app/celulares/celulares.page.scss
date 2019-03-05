@@ -3,8 +3,16 @@
     height: 30%  !important;
 }
 
+#nextPage{
+    vertical-align: middle;
+}
+
 .options{
     min-height: 5rem;
     display: flex;
     padding: 0.5rem;
   }
+
+.scrollable {
+    overflow: scroll
+}
