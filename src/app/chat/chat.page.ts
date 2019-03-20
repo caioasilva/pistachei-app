@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
 import { ApiService } from '../api.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-chat',
@@ -18,7 +19,8 @@ export class ChatPage {
   messageId = -1;
   data = [];
 
-  constructor(public api: ApiService, public loadingController: LoadingController) {
+  constructor(public api: ApiService, public loadingController: LoadingController, 
+    public router: Router, public route: ActivatedRoute) {
     // let d = this.data[0];
     // if(d.type === "message"){    
     //   let msg = {source: "left", message: d.data};
@@ -27,18 +29,13 @@ export class ChatPage {
   }
 
   async getChatScript() {
-    const loading = await this.loadingController.create({
-      message: 'Loading'
-    });
-    await loading.present();
+
     await this.api.getChatScript()
       .subscribe(res => {
         this.data = res;
-        loading.dismiss();
         this.nextMessage();
       }, err => {
         console.log(err);
-        loading.dismiss();
       });
   }
 
@@ -47,11 +44,17 @@ export class ChatPage {
   }
 
   async getResult(input){
+    const loading = await this.loadingController.create({
+      message: 'Calculando!'
+    });
+    await loading.present();
     await this.api.getResult(input)
     .subscribe(res => {
         console.log(res);
+        loading.dismiss();
       }, (err) => {
         console.log(err);
+        loading.dismiss();
       });
   }
   chooseOption(val,name,messa){
@@ -96,13 +99,13 @@ export class ChatPage {
         this.inputName = d.data;
         this.attrib = d.id;
       }
-    }
-    else{
+    }else{
       //TO DO
       //Implementar o envio de dados para a API e resultados
-      console.log(this.results);
+      // console.log(this.results);
       let resp = this.getResult(this.results);
-      console.log(resp);
+      // console.log(resp);
+      this.router.navigate(['/celulares', { response: resp }]);
     }
   }
 

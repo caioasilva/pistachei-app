@@ -18,16 +18,17 @@
 </ion-header>
 <div class="transition-fix"></div>
 <ion-content padding>
-  <div *ngFor="let chat of chats" lines="none" class="total">
-    <div class="innermsg right" *ngIf="chat.source === 'right'">
-        <ion-text>{{chat.message}}</ion-text>
+  <div class="total">
+    <div *ngFor="let chat of chats" lines="none">
+      <div class="innermsg right" *ngIf="chat.source === 'right'">
+          <ion-text>{{chat.message}}</ion-text>
+      </div>
+      <div class="innermsg left" *ngIf="chat.source !== 'right'">
+          <span typingAnimation [typeSpeed]="20" [startDelay]="400" [hideCursorOnComplete]="true" (complete)="nextMessage()">{{chat.message}}</span>
+      </div>
+      <br/>
     </div>
-    <div class="innermsg left" *ngIf="chat.source !== 'right'">
-        <span typingAnimation [typeSpeed]="20" [startDelay]="400" [hideCursorOnComplete]="true" (complete)="nextMessage()">{{chat.message}}</span>
-    </div>
-    <br/>
   </div>
-    
 </ion-content>
 
 <ion-footer *ngIf="attrib != null">
@@ -41,7 +42,7 @@
     <div class="option-list" *ngIf="inputName != null">
         <ion-text>R$ </ion-text>
         <ion-input type="number" [(ngModel)]="numericValue" min=0 placeholder="{{inputName}}"></ion-input>
-        <ion-button shape="round" color="primary" strong (click)="setValue()" routerLink="/celulares">
+        <ion-button shape="round" color="primary" strong (click)="setValue()">
         OK!
       </ion-button>
       </div>

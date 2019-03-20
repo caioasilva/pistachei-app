@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-        <ion-back-button defaultHref="chat"></ion-back-button>
+        <ion-back-button defaultHref="home"></ion-back-button>
         <!-- <ion-button routerLink="/" router-direction="back" shape="round" class="white button-navbar">
             <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
           </ion-button> -->
@@ -27,13 +27,13 @@
               <ion-row>
                 <ion-col size="12" size-md="6">
                   <div>
-                    <h1 text-center>Encontramos o melhor smarthphone para você!</h1>
+                    <h1 text-center>Encontramos o melhor smartphone para você!</h1>
                   </div>
                   <div>
-                    <ion-img text-center src="https://i.imgur.com/EIPnoMy.jpg" id="celular"></ion-img> <!-- dar resize -->
+                    <ion-img text-center src="{{imagem}}" id="celular"></ion-img> <!-- dar resize -->
                   </div>
                   <div>
-                    <h1 text-center>Celular de suco!</h1>
+                    <h1 text-center>{{marca}} {{modelo}}</h1>
                   </div>
                 </ion-col>
                 <ion-col size="12" size-md="6">
