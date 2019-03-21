@@ -1,0 +1,48 @@
+.total {
+  max-width: 800px;
+  align-self: center;
+  margin: 0 auto;
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.innermsg {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 5px;
+  font-weight: 500;
+  font-size: 16px;
+  border-radius: 15px;
+  margin-bottom: 5px;
+}
+
+.innermsg.left {
+  float: left;
+  background-color: #F1F0F0;
+  color: black;
+}
+
+.innermsg.right {
+  float: right;
+  background-color: var(--ion-color-primary);
+  color: white;
+}
+
+.msgbubble {
+  margin-bottom: 10px;
+}
+
+.options{
+  min-height: 5rem;
+  display: flex;
+  padding: 0.5rem;
+}
+
+.option-list{
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 800px;
+  margin: 0 auto;
+}

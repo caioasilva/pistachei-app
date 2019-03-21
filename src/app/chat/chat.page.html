@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref="home"></ion-back-button>
+        <!-- <ion-button routerLink="/" router-direction="back" shape="round" class="white button-navbar">
+            <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+          </ion-button> -->
+      </ion-buttons>
+    <ion-title text-center>
+        <img class="logo-navbar" src="assets/img/Pistachei-logo-transparente.png" />
+    </ion-title>
+    <ion-buttons slot="primary">
+        <ion-button shape="round" fill="outline" class="white button-navbar" style="width: 35px; height: 35px;">
+          <ion-icon slot="icon-only" name="help"></ion-icon>
+        </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<div class="transition-fix"></div>
+<ion-content padding>
+  <div class="total">
+    <div *ngFor="let chat of chats" lines="none">
+      <div class="innermsg right" *ngIf="chat.source === 'right'">
+          <ion-text>{{chat.message}}</ion-text>
+      </div>
+      <div class="innermsg left" *ngIf="chat.source !== 'right'">
+          <span typingAnimation [typeSpeed]="20" [startDelay]="400" [hideCursorOnComplete]="true" (complete)="nextMessage()">{{chat.message}}</span>
+      </div>
+      <br/>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer *ngIf="attrib != null">
+  <ion-toolbar color="light" class="options">
+    <div class="option-list" *ngIf="buttons != null">
+      <ion-button shape="round" color="primary" strong *ngFor="let bt of buttons" 
+        (click)="chooseOption(bt.value,bt.name,bt.message)">
+        {{bt.name}}
+      </ion-button>
+    </div>
+    <div class="option-list" *ngIf="inputName != null">
+        <ion-text>R$ </ion-text>
+        <ion-input type="number" [(ngModel)]="numericValue" min=0 placeholder="{{inputName}}"></ion-input>
+        <ion-button shape="round" color="primary" strong (click)="setValue()">
+        OK!
+      </ion-button>
+      </div>
+  </ion-toolbar>
+</ion-footer>
+
