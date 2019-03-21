@@ -9,9 +9,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "postinstall": "ionic cordova build browser --prod",
-    "heroku-postbuild": "ionic cordova build browser --prod"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
