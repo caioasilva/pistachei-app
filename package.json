@@ -5,11 +5,13 @@
   "homepage": "https://pistachei.com/",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ionic cordova build browser --prod",
+    "heroku-postbuild": "ionic cordova build browser --prod"
   },
   "private": true,
   "dependencies": {
@@ -25,6 +27,9 @@
     "@ionic-native/status-bar": "^5.0.0",
     "@ionic/angular": "^4.0.0",
     "angular-typing-animation": "^0.5.4",
+    "@angular/cli": "~7.2.3",
+    "@angular/compiler": "~7.2.2",
+    "@angular/compiler-cli": "~7.2.2",
     "cordova-android": "7.1.4",
     "cordova-browser": "5.0.4",
     "cordova-plugin-device": "^2.0.2",
@@ -34,10 +39,12 @@
     "cordova-plugin-statusbar": "^2.4.2",
     "cordova-plugin-whitelist": "^1.3.3",
     "core-js": "^2.5.4",
+    "express": "^4.16.4",
     "ng-typed": "^1.0.3",
     "rxjs": "^6.4.0",
     "rxjs-compat": "^6.4.0",
-    "zone.js": "~0.8.29"
+    "zone.js": "~0.8.29",
+    "typescript": "~3.1.6"
   },
   "devDependencies": {
     "@angular-devkit/architect": "~0.12.3",
@@ -65,7 +72,7 @@
     "tslint": "~5.12.0",
     "typescript": "~3.1.6"
   },
-  "description": "An Ionic project",
+  "description": "Encontre o smartphone perfeito para você",
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {},
@@ -81,5 +88,9 @@
       "android",
       "browser"
     ]
+  },
+  "engines": {
+    "node": "10.15.3",
+    "npm": "6.4.1"
   }
 }
