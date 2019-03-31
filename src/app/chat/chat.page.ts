@@ -93,7 +93,11 @@ export class ChatPage {
         let msg = {source: "left", message: d.data};
         this.chats.push(msg);
       }else if(d.type === "options"){
-        this.buttons = d.data;
+        var opts = d.data;
+        if (typeof d.exclude !== "undefined"){
+          opts = opts.filter(obj => obj.value !== this.results[d.exclude]);
+        }
+        this.buttons = opts;
         this.attrib = d.id;
       }else if(d.type === "num-value"){
         this.inputName = d.data;
